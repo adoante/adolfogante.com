@@ -1,3 +1,4 @@
+/** Basic Body Stuff  */
 body {
 	margin: 0 auto;
 	font-family: Tahoma, Verdana, Arial, sans-serif;
@@ -5,12 +6,14 @@ body {
 	background: #23262e;
 }
 
+/** Top Navigation Bar  */
 .nav {
 	overflow: hidden;
+	padding: 1%;
+	padding-top: 2%;
 }
 
 .nav a {
-	float:left;
 	color: white;
 	padding: 14px 13px;
 	font-size: 17px;
@@ -19,32 +22,39 @@ body {
 
 .nav a.logo {
 	font-weight: bold;
-	padding-left: 0;
 	text-decoration: none;
 }
 
+/** Footer  */
 .footer {
+	text-align: center;
 	color: white;
 	font-size: 14px;
 }
 
-.footer p {
-	text-align: center;
-}
-
 .footer a {
-	color:white;
-	text-decoration: wavy;
+	color: white;
+	text-decoration: none;
 }
 
+.footer ul {
+	list-style: none;
+	margin-left: 0;
+	padding-left: 0;
+}
+
+/** Formating photos for doom scroll  */
 .photos {
 	display: flex;
 	justify-content: center;
+	text-align: center;
 }
 
 .photos img {
 	width: 400px;
 	height: auto;
+	padding-right: 1rem;
+	padding-top: 1rem;
 }
 
 .photos ul {
@@ -56,6 +66,8 @@ body {
 	max-width: 400px;
 }
 
+
+/** Centers iframe and sizes the pdf viewer */
 .iframe {
 	margin: 0 auto;
 	display: block;
