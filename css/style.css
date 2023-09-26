@@ -1,69 +1,63 @@
 body {
-	margin: 0;
+	margin: 0 auto;
 	font-family: Tahoma, Verdana, Arial, sans-serif;
 	color: white;
-	background: black;
+	background: #23262e;
 }
 
 .nav {
 	overflow: hidden;
+	align-items: center;
 }
 
 .nav a {
 	float:left;
 	color: white;
-	text-decoration: none;
 	padding: 14px 13px;
 	font-size: 17px;
-
+	text-decoration: none;
 }
 
-.nav a:hover {
-	background-color: white;
-	color: black;
-}
-
-.nav a.active {
-	background-color:white;
-	color: black;
+.nav a.logo {
+	font-weight: bold;
+	padding-left: 0;
+	text-decoration: none;
 }
 
 .footer {
-	float:left;
 	color: white;
-	font-size: 17px;
+	font-size: 14px;
+}
+
+.footer p {
+	text-align: center;
+}
+
+.footer a {
+	color:white;
+	text-decoration: wavy;
+}
+
+.photos {
+	display: flex;
+	justify-content: center;
 }
 
 .photos img {
-	padding-bottom: 1rem;
-	float: left;
 	width: 400px;
 	height: auto;
-	margin-right:15px;
 }
 
-.photos h1 {
-	text-align: justify;
+.photos ul {
+	list-style: none;
 }
 
 .photos p {
 	text-align: justify;
-	width: 800px;
-}
-
-.photos a {
-	text-align: justify;
-	width: 800px;
-	color:#efefef;
-	font-size: xx-large;
+	max-width: 400px;
 }
 
 iframe {
 	height: calc(100vh - 23px);
 	width: calc(100vh);
-}
-
-.container {
-	display: flex;
-	justify-content: center;
 }
