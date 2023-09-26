@@ -29,7 +29,7 @@ body {
 .footer {
 	text-align: center;
 	color: white;
-	font-size: 14px;
+	padding: 10px;
 }
 
 .footer a {
@@ -37,23 +37,17 @@ body {
 	text-decoration: none;
 }
 
-.footer ul {
-	list-style: none;
-	margin-left: 0;
-	padding-left: 0;
-}
-
 /** Formating photos for doom scroll  */
 .photos {
-	display: flex;
-	justify-content: center;
 	text-align: center;
+	margin: 0 auto;
 }
 
 .photos img {
+	display: block;
+	margin: auto auto;
 	width: 400px;
 	height: auto;
-	padding-right: 1rem;
 	padding-top: 1rem;
 }
 
@@ -62,6 +56,8 @@ body {
 }
 
 .photos p {
+	display: block;
+	margin: auto auto;
 	text-align: justify;
 	max-width: 400px;
 }
@@ -73,4 +69,10 @@ body {
 	display: block;
 	height: calc(100vh - 23px);
 	width: calc(100vh);
+}
+
+/** Helpers */
+
+.text-center {
+	text-align: center;
 }
