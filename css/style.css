@@ -1,9 +1,25 @@
+/** Variables and Such */
+:root {
+	--logo-color: #49acd1;
+	--nav-link-color: #D7873A;
+	--main-background-color: #23262e;
+}
+
 /** Basic Body Stuff  */
 body {
 	margin: 0 auto;
 	font-family: Tahoma, Verdana, Arial, sans-serif;
 	color: white;
-	background: #23262e;
+	background: var(--main-background-color);
+}
+
+a {
+	text-decoration: none;
+	color: white;
+}
+
+a:hover {
+	text-decoration: underline;
 }
 
 /** Top Navigation Bar  */
@@ -20,9 +36,20 @@ body {
 	text-decoration: none;
 }
 
+.nav a.nav-active {
+	color: var(--nav-link-color);
+	text-decoration:underline;
+}
+
+a.nav-hover:hover {
+	text-decoration:underline;
+	color: var(--nav-link-color);
+}
+
 .nav a.logo {
 	font-weight: bold;
 	text-decoration: none;
+	color: var(--logo-color);
 }
 
 /** Footer  */
@@ -73,6 +100,11 @@ body {
 
 /** Helpers */
 
-.text-center {
-	text-align: center;
+.faq {
+	padding-left: 2rem;
+	padding-right: 2rem;
+}
+
+.faq p {
+	width: calc(50vh)
 }
