@@ -91,10 +91,10 @@ a.nav-hover:hover {
 
 
 /** Centers iframe and sizes the pdf viewer */
-.iframe {
-	margin: 0 auto;
+iframe.pdf {
 	display: block;
-	height: calc(100vh - 23px);
+	margin: auto auto;
+	height: calc(100vh);
 	width: calc(100vh);
 }
 
