@@ -1,8 +1,8 @@
 /** Variables and Such */
 :root {
-	--logo-color: #49acd1;
-	--nav-link-color: #D7873A;
-	--main-background-color: #23262e;
+	--logo-color: #7dd3fc;
+	--nav-link-color: orange;
+	--main-background-color: #191919;
 }
 
 /** Basic Body Stuff  */
@@ -22,6 +22,8 @@ a:hover {
 	text-decoration: underline;
 }
 
+/** Sitemap */
+
 /** Top Navigation Bar  */
 .nav {
 	text-align: center;
@@ -39,11 +41,11 @@ a:hover {
 
 .nav a.nav-active {
 	color: var(--nav-link-color);
-	text-decoration:underline;
+	text-decoration: underline;
 }
 
 a.nav-hover:hover {
-	text-decoration:underline;
+	text-decoration: underline;
 	color: var(--nav-link-color);
 }
 
