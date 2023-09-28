@@ -1,6 +1,6 @@
 /** Variables and Such */
 :root {
-	--logo-color: #7dd3fc;
+	--logo-color: greenyellow;
 	--nav-link-color: orange;
 	--main-background-color: #191919;
 }
@@ -92,6 +92,15 @@ a.nav-hover:hover {
 	margin: auto auto;
 	text-align: justify;
 	max-width: 400px;
+}
+
+.photos h1 {
+	color: greenyellow;
+}
+
+.photos h1 a {
+	text-decoration: underline;
+	color: greenyellow;
 }
 
 /** Centers iframe and sizes the pdf viewer */
