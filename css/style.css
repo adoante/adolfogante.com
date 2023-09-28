@@ -26,6 +26,7 @@ a:hover {
 
 /** Top Navigation Bar  */
 .nav {
+	text-align: center;
 	overflow: hidden;
 	padding: 1%;
 	padding-top: 2rem;
@@ -56,9 +57,10 @@ a.nav-hover:hover {
 
 /** Footer  */
 .footer {
+	clear: both;
 	text-align: center;
 	color: white;
-	padding: 10px;
+	padding-bottom: 1rem;
 }
 
 .footer a {
@@ -66,7 +68,7 @@ a.nav-hover:hover {
 	text-decoration: none;
 }
 
-/** Formating photos for doom scroll  */
+/** Formating photos  */
 .photos {
 	text-align: center;
 	margin: 0 auto;
@@ -78,6 +80,7 @@ a.nav-hover:hover {
 	width: 400px;
 	height: auto;
 	padding-top: 1rem;
+	padding-bottom: 1rem;
 }
 
 .photos ul {
@@ -91,7 +94,6 @@ a.nav-hover:hover {
 	max-width: 400px;
 }
 
-
 /** Centers iframe and sizes the pdf viewer */
 iframe.pdf {
 	display: block;
@@ -100,13 +102,21 @@ iframe.pdf {
 	width: calc(100vh);
 }
 
-/** Helpers */
+/** FAQ */
 
 .faq {
+	display: block;
+	margin: auto auto;
+	text-align: center;
 	padding-left: 2rem;
 	padding-right: 2rem;
 }
 
 .faq p {
-	width: calc(50vh)
+	display: block;
+	margin: auto auto;
+	text-align: center;
+	max-width: 400px;
 }
+
+/** Links */
