@@ -7,37 +7,40 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>Adolfo Gante</title>
 	<link rel="icon" type="image/png" href="/favicon-32x32.png" />
-	<link rel='stylesheet' type='text/css' href="css\style.css?version=1" />
+	<link rel='stylesheet' type='text/css' href="css\style.css" />
 </head>
 
 <body>
 	<!-- Nav Bar -->
 	<div class="nav">
-		<a class="nav-hover" href="about.html">Home</a>
-		<a class="nav-hover" href="resume.html">Resume</a>
-		<a class="nav-hover" href="cat.html">Cat</a>
-		<a class="nav-active" href="projects.html">Projects</a>
+		<a href="about.html">Home</a>
+		<a href="resume.html">Resume</a>
+		<a class="active" href="projects.html">Projects</a>
 	</div>
 
 	<!--The Meat-->
-	
-	<div class="photos">
+
+	<div class="card">
+		<img src="/photos/projects/macropad-inside.jpg"></img> 
 		<h1><a href="https://github.com/adoante/3x3-Macropad" target="_blank" rel="noopener noreferrer">3x3-Macropad</a></h1>
-		<img src="photos/projects/macropad-inside.jpg">
+		<p>Simple 3x3 macropad using a raspberry pi pico, circuit-python and 3d-printed case</p>
+	</div>
 
+	<div class="card">
 		<h1><a href="https://github.com/adoante/adolfogante.com" target="_blank" rel="noopener noreferrer">This Website!</a></h1>
-		<p style="text-align: center;">You're using it right now! Wow!</p>
+		<p>You're using it right now! Wow!</p>
+	</div>
 
+	<div class="card">
 		<h1><a href="https://github.com/adoante/catpictures.xyz" target="_blank" rel="noopener noreferrer">catpictures.xyz</a></h1>
-		<p style="text-align: center;">Get a cat picture <a style="text-decoration: underline;" href="https://catpictures.xyz">here!</a></p>
-		
+		<p>Get a cat picture <a style="text-decoration: underline;" href="https://catpictures.xyz">here!</a></p>
 	</div>
 
 	<!-- Footer -->
 	<footer class="footer">
 		<hr style="max-width: 400px;">
 		Made by <a href="https://adoante.com">Adolfo Gante</a> <br>
-		<a href="faq.html">FAQ</a> | <a href="about.html">Home</a> | <a href="resume.html">Resume</a> | <a href="cat.html">Cat</a> | <a href="projects.html">Projects</a> <br>
+		<a href="faq.html">FAQ</a> | <a href="about.html">Home</a> | <a href="resume.html">Resume</a> | <a class="active" href="projects.html">Projects</a> <br>
 		<a href="#top">&#9757 Top of the page</a> <br>
 	</footer>
 

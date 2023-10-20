@@ -20,9 +20,41 @@ a {
 
 a:hover {
 	text-decoration: underline;
+	color: var(--nav-link-color);
 }
 
-/** Sitemap */
+a.active {
+	color: var(--nav-link-color);
+	text-decoration: underline;
+}
+
+/** Card */
+.card{
+	background-color: hsla(0, 0%, 0%, 0.1);
+	border: 5px solid hsla(0, 0%, 100%, 0.1);
+	border-radius: 10px;
+	box-shadow: 4px 3px 3px hsla(0, 0%, 100%, 0.1);
+	padding:  20px;
+	text-align: center;
+	max-width: 400px;
+	display: block;
+	margin: 25px auto;
+}
+.card img {
+	width: 300px;
+	height: auto;
+	border-radius: 10px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+.card h1 {
+	color: greenyellow;
+}
+
+.card a {
+	text-decoration: underline;
+	color: greenyellow;
+}
 
 /** Top Navigation Bar  */
 .nav {
@@ -33,20 +65,8 @@ a:hover {
 }
 
 .nav a {
-	color: white;
 	padding: 14px 13px;
 	font-size: 17px;
-	text-decoration: none;
-}
-
-.nav a.nav-active {
-	color: var(--nav-link-color);
-	text-decoration: underline;
-}
-
-a.nav-hover:hover {
-	text-decoration: underline;
-	color: var(--nav-link-color);
 }
 
 .nav a.logo {
@@ -57,50 +77,10 @@ a.nav-hover:hover {
 
 /** Footer  */
 .footer {
-	clear: both;
+	
 	text-align: center;
 	color: white;
-	padding-bottom: 1rem;
-}
-
-.footer a {
-	color: white;
-	text-decoration: none;
-}
-
-/** Formating photos  */
-.photos {
-	text-align: center;
-	margin: 0 auto;
-}
-
-.photos img {
-	display: block;
-	margin: auto auto;
-	width: 400px;
-	height: auto;
-	padding-top: 1rem;
-	padding-bottom: 1rem;
-}
-
-.photos ul {
-	list-style: none;
-}
-
-.photos p {
-	display: block;
-	margin: auto auto;
-	text-align: justify;
-	max-width: 400px;
-}
-
-.photos h1 {
-	color: greenyellow;
-}
-
-.photos h1 a {
-	text-decoration: underline;
-	color: greenyellow;
+	padding: 2rem;
 }
 
 /** Centers iframe and sizes the pdf viewer */
@@ -119,13 +99,14 @@ iframe.pdf {
 	text-align: center;
 	padding-left: 2rem;
 	padding-right: 2rem;
+	max-width: 400px;
 }
 
 .faq p {
 	display: block;
 	margin: auto auto;
 	text-align: center;
-	max-width: 400px;
+	
 }
 
 /** Links */
