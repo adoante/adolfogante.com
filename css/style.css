@@ -89,24 +89,6 @@ iframe.pdf {
 	width: calc(100vh);
 }
 
-/** FAQ */
-
-.faq {
-	display: block;
-	margin: auto auto;
-	text-align: center;
-	padding-left: 2rem;
-	padding-right: 2rem;
-	max-width: 400px;
-}
-
-.faq p {
-	display: block;
-	margin: auto auto;
-	text-align: center;
-	
-}
-
 /** icon-links */
 
 .icon-links {
