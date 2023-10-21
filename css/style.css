@@ -11,6 +11,7 @@ body {
 	font-family: Tahoma, Verdana, Arial, sans-serif;
 	color: white;
 	background: var(--main-background-color);
+	background-image: url('/photos/Black-Backgrounds-HD-1920x1080.png');
 }
 
 a {
@@ -18,14 +19,8 @@ a {
 	color: white;
 }
 
-a:hover {
-	text-decoration: underline;
-	color: var(--nav-link-color);
-}
-
 a.active {
 	color: var(--nav-link-color);
-	text-decoration: underline;
 }
 
 /** Card */
@@ -36,19 +31,24 @@ a.active {
 	box-shadow: 4px 3px 3px hsla(0, 0%, 100%, 0.1);
 	padding:  20px;
 	text-align: center;
-	max-width: 400px;
+	max-width: 500px;
 	display: block;
-	margin: 25px auto;
+	margin: 50px auto;
 }
 .card img {
-	width: 300px;
+	width: 400px;
 	height: auto;
 	border-radius: 10px;
 	margin-bottom: 10px;
 	margin-top: 10px;
 }
+
+.card img.round {
+	border-radius: 50%;
+}
+
 .card h1 {
-	color: greenyellow;
+	color: hsl(84, 100%, 50%);
 }
 
 .card a {
@@ -56,31 +56,29 @@ a.active {
 	color: greenyellow;
 }
 
+.card p {
+	font-size: 24px;
+}
+
 /** Top Navigation Bar  */
 .nav {
 	text-align: center;
-	overflow: hidden;
+	
 	padding: 1%;
 	padding-top: 2rem;
 }
 
 .nav a {
-	padding: 14px 13px;
-	font-size: 17px;
+	padding: 15px;
+	font-size: 24px;
+	margin: 15px;
 }
 
-.nav a.logo {
-	font-weight: bold;
-	text-decoration: none;
-	color: var(--logo-color);
-}
-
-/** Footer  */
-.footer {
-	
-	text-align: center;
-	color: white;
-	padding: 2rem;
+.nav a:hover {
+	box-shadow: 5px 5px 5px hsla(39, 100%, 50%, 0.3);
+	background-color: orange;
+	border-radius: 5px;
+	color: black;
 }
 
 /** Centers iframe and sizes the pdf viewer */
@@ -109,4 +107,23 @@ iframe.pdf {
 	
 }
 
-/** Links */
+/** icon-links */
+
+.icon-links {
+	display: block;
+	margin: auto auto;
+	text-align: center;
+}
+
+.icon-links img {
+	width: 50px;
+	height: auto;
+	margin: 20px;
+}
+
+.icon-links img:hover {
+	border-radius: 50%;
+	background-color: orange;
+	box-shadow: 5px 5px 5px hsla(39, 100%, 50%, 0.3);
+	background-color: orange;
+}
