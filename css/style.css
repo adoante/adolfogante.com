@@ -63,6 +63,22 @@ time {
 footer {
 	background-color: var(--background-color-dark);
 	color: white;
+	text-align: center;
+}
+
+footer ul {
+	list-style-type: none;
+  	margin: 0;
+  	padding: 0;
+
+}
+
+footer li {
+	display: inline;
+}
+
+footer a {
+	padding: 8px;
 }
 
 header {
@@ -81,10 +97,12 @@ header {
 header img {
 	width: 46px;
 	height: 46px;
+	border-radius: 360px;
 }
 
 nav {
 	margin-left: auto;
+	font-size: 24px;
 }
 
 nav ul {
@@ -102,9 +120,25 @@ nav a {
 	padding: 8px;
 }
 
+main {
+	padding: 50px;
+}
+
 #about-section {
 	background-color: var(--background-color-dark);
 	color: white;
+
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+#about-section img {
+	padding: 32px;
+}
+
+#about-section p {
+	padding: 32px
 }
 
 #about-section img {
@@ -114,23 +148,29 @@ nav a {
 }
 
 #experience-section {
-	background-color: var(--background-color-blue);
+	background-color: black;
 	color: white;
+	padding: 30px;
+	border-radius: 8px;
 }
 
 #education-section {
 	background-color: var(--background-color-dark);
 	color: white;
+	padding: 30px;
 }
 
 #skills-section {
-	background-color: var(--background-color-blue);
+	background-color: black;
 	color: white;
+	padding: 30px;
+	border-radius: 8px;
 }
 
 #projects-section {
 	background-color: var(--background-color-dark);
 	color: white;
+	padding: 30px;
 }
 
 #projects-section img {
@@ -140,8 +180,10 @@ nav a {
 }
 
 #articles-section {
-	background-color: var(--background-color-blue);
+	background-color: black;
 	color: white;
+	padding: 30px;
+	border-radius: 8px;
 }
 
 #articles-section a {
