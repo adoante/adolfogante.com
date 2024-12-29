@@ -6,6 +6,7 @@
 	--background-color-dark: #191919;
 	--background-color-blue: #171721;
 	--accent-color-blue: #9ED2FF;
+	box-sizing: border-box;
 }
 
 /** Basic Body Stuff  */
@@ -82,27 +83,26 @@ footer a {
 }
 
 header {
-	background-color: var(--background-color-dark);
-	color: white;
+	background-color: black;
 	height: 80px;
-	width: auto;
-
+	width: 100%;
 	display: flex;
-	align-content: center;
 	align-items: center;
-	flex-direction: row;
-	margin-left: auto;
+	align-content: center;
+	justify-content: space-between;
+
+	position: fixed;
 }
 
 header img {
 	width: 46px;
 	height: 46px;
 	border-radius: 360px;
+	margin-left: 20%;
 }
 
 nav {
-	margin-left: auto;
-	font-size: 24px;
+	margin-right: 20%;
 }
 
 nav ul {
@@ -120,6 +120,10 @@ nav a {
 	padding: 8px;
 }
 
+nav a:hover {
+	color: var(--accent-color-blue)
+}
+
 main {
 	padding: 50px;
 }
@@ -131,6 +135,8 @@ main {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
+
+	padding: 30px;
 }
 
 #about-section img {
