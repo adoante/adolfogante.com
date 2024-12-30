@@ -6,6 +6,7 @@
 	--background-color-dark: #191919;
 	--background-color-blue: #171721;
 	--accent-color-blue: #9ED2FF;
+	--accent-color-dark: #2D4152;
 	box-sizing: border-box;
 }
 
@@ -80,6 +81,16 @@ footer li {
 
 footer a {
 	padding: 8px;
+	color: var(--accent-color-blue);
+}
+
+footer a:hover {
+	color: var(--accent-color-dark);
+}
+
+footer hr {
+	width: 80%;
+	border: 1px solid var(--accent-color-dark);
 }
 
 header {
@@ -94,11 +105,14 @@ header {
 	position: fixed;
 }
 
+header a {
+	margin-left: 20%;
+}
+
 header img {
 	width: 46px;
 	height: 46px;
 	border-radius: 360px;
-	margin-left: 20%;
 }
 
 nav {
@@ -118,6 +132,7 @@ nav li {
 
 nav a {
 	padding: 8px;
+	margin: 0;
 }
 
 nav a:hover {
@@ -126,6 +141,18 @@ nav a:hover {
 
 main {
 	padding: 50px;
+}
+
+article {
+	padding: 50px;
+}
+
+article a {
+	color: var(--accent-color-blue);
+}
+
+article a:hover {
+	color: var(--accent-color-dark);
 }
 
 #about-section {
@@ -160,6 +187,11 @@ main {
 	border-radius: 8px;
 }
 
+#experience-section img {
+	width: 128px;
+	height: 128px;
+}
+
 #education-section {
 	background-color: var(--background-color-dark);
 	color: white;
@@ -173,6 +205,23 @@ main {
 	border-radius: 8px;
 }
 
+#skills-section ul {
+	list-style-type: none;
+}
+
+#skills-section li {
+	display: inline;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	margin: 8px;
+	border-radius: 4px;
+	border: solid;
+	border-color: var(--accent-color-blue);
+	border-width: 1px;
+}
+
 #projects-section {
 	background-color: var(--background-color-dark);
 	color: white;
@@ -183,6 +232,37 @@ main {
 	width: 194px;
 	height: 194px;
 	border-radius: 8px;
+}
+
+.project-card-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.project-card-wide {
+	background-color: white;
+	color: black;
+	padding: 36px;
+	margin: 25px;
+	border-radius: 8px;
+	box-shadow: 4px 4px 4px 4px var(--accent-color-dark);
+
+	display: flex;
+	flex-direction: column;
+	max-width: 300px;
+	align-items: center;
+}
+
+.project-card-wide img {
+	width: 315px;
+	height: 315px;
+	border-radius: 8px;
+	grid-row-start: 3;
+}
+
+.project-card-wide h1 {
+	grid-column-start: 4;
 }
 
 #articles-section {
@@ -200,39 +280,103 @@ main {
 	font-size: 11px;
 }
 
-
-
-/** Card */
-
-
-/** Top Navigation Bar  */
-
-/** Fonts */
-
-.roboto {
-  font-family: "Roboto", serif;
-  font-weight: 400;
-  font-style: normal;
+#articles-section a:hover {
+	color: var(--accent-color-dark);
 }
 
-.roboto-mono {
-  font-family: "Roboto Mono", serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
+@media only screen and (max-width: 800px)  {
+	#about-section {
+		background-color: var(--background-color-dark);
+		color: white;
+	
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	
+		padding: 30px;
+	}
+	
+	#about-section img {
+		padding: 64px;
+	}
+	
+	#about-section p {
+		padding: 0px;
+		margin: 0px;
+	}
+	
+	#about-section img {
+		width: 230px;
+		height: 230px;
+		border-radius: 360px;
+	}
 
-.roboto-slab {
-  font-family: "Roboto Slab", serif;
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-style: normal;
-}
+	#skills-section {
+		background-color: black;
+		color: white;
+		padding: 30px;
+		border-radius: 8px;
+	}
+	
+	#skills-section ul {
+		list-style-type: none;
+	}
+	
+	#skills-section li {
+		display: flex;
+		flex-direction: row;
+		border-radius: 4px;
+		border: solid;
+		border-color: var(--accent-color-blue);
+		border-width: 1px;
+		font-size: 12px;
+	}
 
-@media only screen and (max-width: 390px) {
+	#projects-section {
+		background-color: var(--background-color-dark);
+		color: white;
+		padding: 30px;
+	}
+	
+	#projects-section img {
+		width: 194px;
+		height: 194px;
+		border-radius: 8px;
+	}
 
-}
+	#projects-section h2 {
+		font-size: 18px;
+		margin-bottom: 4px;
+	}
 
-@media only screen and (max-width: 412px) {
+	#projects-section h3 {
+		font-size: 16px;
+		margin: 4px;
+	}
 
+
+	#projects-section p {
+		font-size: 11px;
+	}
+
+	main {
+		padding: 16px;
+	}
+
+	article {
+		padding: 50px;
+		padding-top: 100px;
+	}
+	
+	article a {
+		color: var(--accent-color-blue);
+	}
+	
+	article a:hover {
+		color: var(--accent-color-dark);
+	}
+
+	footer p {
+		font-size: 11px;
+	}
 }
