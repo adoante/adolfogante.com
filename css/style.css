@@ -174,7 +174,8 @@ article a:hover {
 }
 
 #about-section p {
-	padding: 32px
+	padding: 32px;
+	font-size: 20px;
 }
 
 #about-section img {
