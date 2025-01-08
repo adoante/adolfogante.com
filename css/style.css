@@ -365,6 +365,7 @@ article a:hover {
 
 	main {
 		padding: 16px;
+		padding-top: 0px;
 	}
 
 	article {
@@ -383,4 +384,50 @@ article a:hover {
 	footer p {
 		font-size: 11px;
 	}
+
+	header {
+		background-color: black;
+		height: auto;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		position: relative;
+
+		padding-top: 16px;
+		padding-bottom: 16px;
+	}
+
+	header a {
+		margin-left: 0;
+	}
+	
+	header img {
+		width: 46px;
+		height: 46px;
+		border-radius: 360px;
+	}
+
+	nav {
+		margin-right: 0%;
+	}
+
+	nav ul {
+		list-style-type: none;
+	  	margin: 0;
+	  	padding: 0;
+		overflow: hidden;
+	}
+
+	nav li {
+		display: block;
+		text-align: center;
+		padding: 5px;
+		font-size: 20px;
+	}
+
+	nav a {
+		padding: 10px;
+		margin: 0;
+	}
+
 }
