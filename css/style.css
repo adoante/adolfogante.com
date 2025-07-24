@@ -19,6 +19,7 @@ body {
 }
 
 a {
+	font-family: "Roboto Mono", serif;
 	text-decoration: none;
 	color: white;
 }
@@ -231,7 +232,7 @@ article a:hover {
 #skills-section img {
 	width: 50px;
 	padding: 10px;
-	margin: auto;
+	margin-top: auto;
 }
 
 #skills-section img:hover {
@@ -261,6 +262,7 @@ article a:hover {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
+	justify-content: center;
 }
 
 .project-card-wide {
@@ -286,6 +288,15 @@ article a:hover {
 
 .project-card-wide h1 {
 	grid-column-start: 4;
+}
+
+.project-card-wide a {
+	font-weight: bold;
+	color: black;
+}
+
+.project-card-wide a:hover {
+	color: #FFA500;
 }
 
 .project-card-wide:hover {
