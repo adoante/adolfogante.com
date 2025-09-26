@@ -8,7 +8,7 @@ const Footer = () => {
 			{/* Social Links */}
 			<div className="flex space-x-4">
 				{[
-					["/", <ReadCvLogoIcon className="w-7 h-7" key="resume" />],
+					["https://drive.google.com/file/d/1IJtaDaHiNDXSQ-6YRPWkqblL5wZrMc_Q/view?usp=drive_link", <ReadCvLogoIcon className="w-7 h-7" key="resume" />],
 					["https://github.com/adoante/", <GithubLogoIcon className="w-7 h-7" key="github" />],
 					["https://www.linkedin.com/in/adolfogante/", <LinkedinLogoIcon className="w-7 h-7" key="linkedin" />],
 				].map(([url, icon]) => (
@@ -18,8 +18,8 @@ const Footer = () => {
 					</Link>
 				))}
 			</div>
-			<p>why is it {`'`}copyright{`'`} and not {`'`}copywrite{`'`}?</p>
-			<p>{`"`}I have the <i>RIGHT</i> to <i>COPY</i> what I <i>WRITE.</i>{`"`}</p>
+			<p>Contact me at: <Link className="hover:text-[var(--highlight)]" href="mailto:adolfogante@gmail.com"> adolfogante@gmail.com</Link>
+			</p>
 		</footer>
 	)
 }
