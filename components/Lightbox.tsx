@@ -40,7 +40,7 @@ export default function Lightbox({ src, title, description, width, height, width
 				<motion.div
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
-					transition={{ duration: 0.15, ease: "easeInOut" }}
+					transition={{ duration: 0.3, ease: "easeInOut" }}
 				>
 					<DialogBackdrop className="fixed inset-0 bg-black/90" />
 					<div className="fixed inset-0 flex w-screen items-center justify-center">
