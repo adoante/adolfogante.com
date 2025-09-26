@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { Fira_Code, Inter } from "next/font/google"
+import { Fira_Code } from "next/font/google"
 import "./globals.css"
 import { NavBar } from "@/components/NarBar"
 import { Footer } from "@/components/Footer"
@@ -21,10 +21,12 @@ export default function RootLayout({
 	return (
 		<html lang="en" className={fira.className}>
 			<body
-				className="flex flex-col h-screen justify-between"
+				className="flex flex-col min-h-screen"
 			>
 				<NavBar />
-				{children}
+				<main className="flex-1">
+					{children}
+				</main>
 				<Footer />
 			</body>
 		</html>

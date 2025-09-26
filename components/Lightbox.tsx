@@ -26,7 +26,7 @@ export default function Lightbox({ src, title, description, width, height, width
 					title={description}
 					width={width}
 					height={height}
-					className="shadow-2xl"
+					className="shadow-2xl bg-white p-2"
 				/>
 			</Button>
 
@@ -43,6 +43,7 @@ export default function Lightbox({ src, title, description, width, height, width
 							title={description}
 							width={widthLg}
 							height={heightLg}
+							className="bg-white p-2"
 						/>
 
 						<Description className="my-2">{description}</Description>
