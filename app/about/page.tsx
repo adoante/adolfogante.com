@@ -12,8 +12,6 @@ export default function About() {
 				<li>youtube</li>
 				<li>wordle</li>
 			</ul>
-
-			<Quote quote="It can alawys get worse." cite="sombody" />
 		</main>
 	)
 }
