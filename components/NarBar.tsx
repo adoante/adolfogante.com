@@ -9,10 +9,10 @@ const NavBar = () => {
 			{/* Pages */}
 			<div className="flex md:flex-row flex-col md:space-x-4 text-lg">
 				{[
-					["about", "/"],
-					["work", "/"],
-					["blog", "/"],
-					["fun", "/"],
+					["about", "/about"],
+					["work", "/work"],
+					["blog", "/blog"],
+					["fun", "/fun"],
 				].map(([title, url]) => (
 					<Link className="hover:underline hover:text-[var(--highlight)]" key={title} href={url}>{title}</Link>
 				))}
