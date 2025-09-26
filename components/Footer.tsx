@@ -1,5 +1,8 @@
+"use client"
+
 import Link from "next/link"
 import { GithubLogoIcon, LinkedinLogoIcon, ReadCvLogoIcon } from "@phosphor-icons/react/ssr"
+import DarkModeToggle from "./DarkModeToggle"
 
 const Footer = () => {
 	return (
@@ -20,6 +23,7 @@ const Footer = () => {
 			</div>
 			<p>Contact me at: <Link className="hover:text-[var(--highlight)]" href="mailto:adolfogante@gmail.com"> adolfogante@gmail.com</Link>
 			</p>
+			<DarkModeToggle />
 		</footer>
 	)
 }
