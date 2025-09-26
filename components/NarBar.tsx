@@ -7,7 +7,7 @@ import Link from "next/link"
 const NavBar = () => {
 	const pathname = usePathname()
 
-	const linkStyle = "hover:underline hover:text-[var(--highlight)"
+	const linkStyle = "hover:underline hover:text-[var(--highlight)]"
 
 	const links = [
 		["about", "/about"],
@@ -26,7 +26,7 @@ const NavBar = () => {
 					const active = pathname == url
 					return (
 						<Link
-							className={linkStyle + (active ? " text-[var(--highlight)] underline" : "")}
+							className={`${linkStyle} ${active ? "text-[var(--highlight)] font-bold" : ""}`}
 							key={title}
 							href={url}
 						>
@@ -49,7 +49,7 @@ const NavBar = () => {
 					</Link>
 				))}
 			</div>
-		</nav>
+		</nav >
 	)
 }
 
