@@ -1,21 +1,40 @@
+"use client"
+
 import { GithubLogoIcon, LinkedinLogoIcon } from "@phosphor-icons/react/ssr"
+import { usePathname } from "next/navigation"
 import Link from "next/link"
 
 const NavBar = () => {
+	const pathname = usePathname()
+
+	const linkStyle = "hover:underline hover:text-[var(--highlight)"
+
+	const links = [
+		["about", "/about"],
+		["work", "/work"],
+		["blog", "/blog"],
+		["fun", "/fun"],
+	]
+
 	return (
 		<nav className="grid grid-cols-3 place-items-center text-center md:p-15 p-5">
 			<Link className="text-2xl font-bold hover:text-[var(--highlight)]" href="/">Adolfo Gante</Link>
 
 			{/* Pages */}
 			<div className="flex md:flex-row flex-col md:space-x-4 text-lg">
-				{[
-					["about", "/about"],
-					["work", "/work"],
-					["blog", "/blog"],
-					["fun", "/fun"],
-				].map(([title, url]) => (
-					<Link className="hover:underline hover:text-[var(--highlight)]" key={title} href={url}>{title}</Link>
-				))}
+				{links.map(([title, url]) => {
+					const active = pathname == url
+					return (
+						<Link
+							className={linkStyle + (active ? " text-[var(--highlight)] underline" : "")}
+							key={title}
+							href={url}
+						>
+							{title}
+						</Link>
+					)
+				}
+				)}
 			</div>
 
 			{/* Social Links */}
