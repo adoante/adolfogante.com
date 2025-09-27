@@ -1,41 +1,34 @@
 "use client"
 
-import { Description, Dialog, DialogPanel, DialogTitle, DialogBackdrop, Button } from "@headlessui/react"
+import { Dialog, DialogPanel, DialogTitle, DialogBackdrop, Description, Button } from "@headlessui/react"
 import { motion } from "motion/react"
-import Image from "next/image"
 import { useState } from "react"
+import Image from "next/image"
 
-interface LightboxProps {
+interface CertificateProps {
+	school: string
+	name: string
+	awared: string
 	src: string
-	title: string
-	description: string
-	width: number
-	height: number
-	widthLg: number
-	heightLg: number
 }
 
-export default function Lightbox({ src, title, description, width, height, widthLg, heightLg }: LightboxProps) {
+const Certificate = ({ school, name, awared, src }: CertificateProps) => {
 	const [isOpen, setIsOpen] = useState(false)
 
 	return (
 		<>
 			<motion.button
 				whileHover={{
-					scale: 1.3,
+					scale: 1.1,
 					transition: { duration: 0.1 }
 				}}
 				onClick={() => setIsOpen(true)}
-				className="cursor-pointer">
-				<Image
-					src={src}
-					alt={title}
-					title={description}
-					width={width}
-					height={height}
-					className="shadow-2xl bg-white p-2"
-				/>
+				className="bg-[var(--alt-background)] md:p-8 border-t-5 md:border-t-10 border-t-[var(--highlight)] cursor-pointer">
+				<h4 className="text-xl">{school}</h4>
+				<p>{name}</p>
+				<p>{awared}</p>
 			</motion.button>
+
 			<Dialog open={isOpen} onClose={() => setIsOpen(false)}>
 				<motion.div
 					initial={{ opacity: 0 }}
@@ -45,18 +38,17 @@ export default function Lightbox({ src, title, description, width, height, width
 					<DialogBackdrop className="fixed inset-0 bg-black/90" />
 					<div className="fixed inset-0 flex w-screen items-center justify-center">
 						<DialogPanel>
-							<DialogTitle className="my-2 dark:text-white">{title}</DialogTitle>
+							<DialogTitle className="my-2 dark:text-white">{school}</DialogTitle>
+
+							<Description className="my-2 dark:text-white">{awared}</Description>
 
 							<Image
 								src={src}
-								alt={title}
-								title={description}
-								width={widthLg}
-								height={heightLg}
-								className="bg-white p-2"
+								alt="certificate or degree"
+								title={name}
+								width={800}
+								height={800}
 							/>
-
-							<Description className="my-2 dark:text-white">{description}</Description>
 
 							<Button
 								onClick={() => setIsOpen(false)} className="cursor-pointer border dark:border-white dark:text-white my-2 px-2 hover:border-[var(--highlight)] hover:text-[var(--highlight)]"
@@ -70,3 +62,5 @@ export default function Lightbox({ src, title, description, width, height, width
 		</>
 	)
 }
+
+export { Certificate }
