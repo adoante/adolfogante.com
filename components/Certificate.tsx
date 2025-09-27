@@ -23,7 +23,7 @@ const Certificate = ({ school, name, awared, src }: CertificateProps) => {
 					transition: { duration: 0.1 }
 				}}
 				onClick={() => setIsOpen(true)}
-				className="bg-[var(--alt-background)] md:p-8 border-t-5 md:border-t-10 border-t-[var(--highlight)] cursor-pointer">
+				className="bg-[var(--alt-background)] md:p-8 p-2 border-t-5 md:border-t-10 border-t-[var(--highlight)] cursor-pointer">
 				<h4 className="text-xl">{school}</h4>
 				<p>{name}</p>
 				<p>{awared}</p>
@@ -37,7 +37,7 @@ const Certificate = ({ school, name, awared, src }: CertificateProps) => {
 				>
 					<DialogBackdrop className="fixed inset-0 bg-black/90" />
 					<div className="fixed inset-0 flex w-screen items-center justify-center">
-						<DialogPanel>
+						<DialogPanel className="m-5">
 							<span className="flex flex-row items-center justify-between">
 								<DialogTitle className="my-2 dark:text-white">{school}</DialogTitle>
 
@@ -56,6 +56,7 @@ const Certificate = ({ school, name, awared, src }: CertificateProps) => {
 								title={name}
 								width={800}
 								height={800}
+								className="bg-white p-2"
 							/>
 							<Description className="my-2 dark:text-white">{awared}</Description>
 
