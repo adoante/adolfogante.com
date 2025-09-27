@@ -1,5 +1,38 @@
 @import "tailwindcss";
 
+/* yeah used ai for this scroll bar stuff*/
+@layer utilities {
+
+	/* hide webkit scrollbars */
+	.no-scrollbar::-webkit-scrollbar {
+		width: 0;
+		height: 0;
+		display: none;
+	}
+
+	/* firefox / IE */
+	.no-scrollbar {
+		-ms-overflow-style: none;
+		/* IE and Edge */
+		scrollbar-width: none;
+		/* Firefox */
+	}
+
+	/* also cover html/body if the browser makes them the scrolling element */
+	html.no-scrollbar,
+	body.no-scrollbar {
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+	}
+
+	html.no-scrollbar::-webkit-scrollbar,
+	body.no-scrollbar::-webkit-scrollbar {
+		width: 0;
+		height: 0;
+		display: none;
+	}
+}
+
 :root {
 	--background: #2d2d2d;
 	--foreground: #ffffff;
