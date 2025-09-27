@@ -1,6 +1,6 @@
 "use client"
 
-import { Dialog, DialogPanel, DialogTitle, DialogBackdrop, Description, Button } from "@headlessui/react"
+import { Dialog, DialogPanel, DialogTitle, DialogBackdrop, Description, CloseButton } from "@headlessui/react"
 import { motion } from "motion/react"
 import { useState } from "react"
 import Image from "next/image"
@@ -50,11 +50,11 @@ const Certificate = ({ school, name, awared, src }: CertificateProps) => {
 								height={800}
 							/>
 
-							<Button
-								onClick={() => setIsOpen(false)} className="cursor-pointer border dark:border-white dark:text-white my-2 px-2 hover:border-[var(--highlight)] hover:text-[var(--highlight)]"
+							<CloseButton
+								className="cursor-pointer border dark:border-white dark:text-white my-2 px-2 hover:border-[var(--highlight)] hover:text-[var(--highlight)]"
 							>
 								close
-							</Button>
+							</CloseButton>
 						</DialogPanel>
 					</div>
 				</motion.div>

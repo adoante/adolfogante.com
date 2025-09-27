@@ -1,6 +1,6 @@
 "use client"
 
-import { Description, Dialog, DialogPanel, DialogTitle, DialogBackdrop, Button } from "@headlessui/react"
+import { Description, Dialog, DialogPanel, DialogTitle, DialogBackdrop, Button, CloseButton } from "@headlessui/react"
 import { motion } from "motion/react"
 import Image from "next/image"
 import { useState } from "react"
@@ -45,8 +45,17 @@ export default function Lightbox({ src, title, description, width, height, width
 					<DialogBackdrop className="fixed inset-0 bg-black/90" />
 					<div className="fixed inset-0 flex w-screen items-center justify-center">
 						<DialogPanel>
-							<DialogTitle className="my-2 dark:text-white">{title}</DialogTitle>
+							<span className="flex flex-row justify-between items-center">
+								<DialogTitle className="my-2 dark:text-white">{title}</DialogTitle>
+								<motion.button
+									whileHover={{ scale: 1.1 }}
+									className="text-center cursor-pointer px-2 py-1 h-min dark:text-white hover:text-[var(--highlight)]"
+									onClick={() => setIsOpen(false)}
+								>
+									Close
+								</motion.button>
 
+							</span>
 							<Image
 								src={src}
 								alt={title}
@@ -58,11 +67,6 @@ export default function Lightbox({ src, title, description, width, height, width
 
 							<Description className="my-2 dark:text-white">{description}</Description>
 
-							<Button
-								onClick={() => setIsOpen(false)} className="cursor-pointer border dark:border-white dark:text-white my-2 px-2 hover:border-[var(--highlight)] hover:text-[var(--highlight)]"
-							>
-								close
-							</Button>
 						</DialogPanel>
 					</div>
 				</motion.div>
