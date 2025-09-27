@@ -44,7 +44,7 @@ export default function Lightbox({ src, title, description, width, height, width
 				>
 					<DialogBackdrop className="fixed inset-0 bg-black/90" />
 					<div className="fixed inset-0 flex w-screen items-center justify-center">
-						<DialogPanel>
+						<DialogPanel className="m-5">
 							<span className="flex flex-row justify-between items-center">
 								<DialogTitle className="my-2 dark:text-white">{title}</DialogTitle>
 								<motion.button
