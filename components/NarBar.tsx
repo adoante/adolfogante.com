@@ -18,8 +18,14 @@ const NavBar = () => {
 
 	return (
 		<nav className="grid grid-cols-3 place-items-center text-center md:p-15 p-5">
-			<Link className="text-2xl font-bold hover:text-[var(--highlight)]" href="/">Adolfo Gante</Link>
 
+			<Link
+				className={`text-2xl font-bold hover:text-[var(--highlight)] ${pathname == "/" ? "text-[var(--highlight)]" : ""
+					}`}
+				href="/"
+			>
+				Adolfo Gante
+			</Link>
 			{/* Pages */}
 			<div className="flex md:flex-row flex-col md:space-x-4 text-lg">
 				{links.map(([title, url]) => {
