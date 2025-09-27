@@ -38,9 +38,17 @@ const Certificate = ({ school, name, awared, src }: CertificateProps) => {
 					<DialogBackdrop className="fixed inset-0 bg-black/90" />
 					<div className="fixed inset-0 flex w-screen items-center justify-center">
 						<DialogPanel>
-							<DialogTitle className="my-2 dark:text-white">{school}</DialogTitle>
+							<span className="flex flex-row items-center justify-between">
+								<DialogTitle className="my-2 dark:text-white">{school}</DialogTitle>
 
-							<Description className="my-2 dark:text-white">{awared}</Description>
+								<motion.button
+									whileHover={{ scale: 1.1 }}
+									className="text-center cursor-pointer px-2 py-1 h-min dark:text-white hover:text-[var(--highlight)]"
+									onClick={() => setIsOpen(false)}
+								>
+									Close
+								</motion.button>
+							</span>
 
 							<Image
 								src={src}
@@ -49,12 +57,8 @@ const Certificate = ({ school, name, awared, src }: CertificateProps) => {
 								width={800}
 								height={800}
 							/>
+							<Description className="my-2 dark:text-white">{awared}</Description>
 
-							<CloseButton
-								className="cursor-pointer border dark:border-white dark:text-white my-2 px-2 hover:border-[var(--highlight)] hover:text-[var(--highlight)]"
-							>
-								close
-							</CloseButton>
 						</DialogPanel>
 					</div>
 				</motion.div>
