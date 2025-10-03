@@ -5,7 +5,7 @@ interface QuoteProps {
 
 const Quote = ({ quote, cite }: QuoteProps) => {
 	return (
-		<p className="md:p-8 p-4 md:border-l-10 border-l-5 mx-5 border-l-[var(--highlight)] bg-[var(--alt-background)]">
+		<p className="md:p-8 p-4 md:border-l-10 border-l-5 mx-5 border-l-[var(--highlight)] bg-[var(--bg)]">
 			<q>{quote}</q> <cite>- {cite}</cite>
 		</p>
 	)

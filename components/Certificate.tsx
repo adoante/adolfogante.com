@@ -23,7 +23,7 @@ const Certificate = ({ school, name, awared, src }: CertificateProps) => {
 					transition: { duration: 0.1 }
 				}}
 				onClick={() => setIsOpen(true)}
-				className="bg-[var(--alt-background)] md:p-8 p-2 border-t-5 md:border-t-10 border-t-[var(--highlight)] cursor-pointer">
+				className="bg-[var(--bg)] md:p-8 p-2 border-t-5 md:border-t-10 border-t-[var(--highlight)] hover:bg-[var(--bg-light)] cursor-pointer">
 				<h4 className="text-xl">{school}</h4>
 				<p>{name}</p>
 				<p>{awared}</p>

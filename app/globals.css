@@ -1,52 +1,33 @@
 @import "tailwindcss";
 
-/* Vanilla CSS */
 :root {
-	--background: #2d2d2d;
-	--alt-background: #191919;
-	--highlight: #FFA500;
-	--foreground: #ffffff;
-}
-
-:root {
-	--background: #334443;
-	--alt-background: #34656D;
-	--highlight: #faeab1;
-	--foreground: #ffffff;
-}
-
-:root {
-	--background: #1B3C53;
-	--alt-background: #234C6A;
-	--highlight: #f39f5a;
-	--foreground: #ffffff;
-}
-
-/* https://colorhunt.co/palette/222831393e4600adb5eeeeee */
-:root {
-	--background: #222831;
-	--alt-background: #393E46;
-	--highlight: #00adb5;
-	--foreground: #EEEEEE;
+	--bg-dark: hsl(216, 18%, 17%);
+	--bg: hsl(216, 18%, 23%);
+	--bg-light: hsl(216, 18%, 28%);
+	--text: hsl(0, 0%, 95%);
+	--text-muted: hsl(0, 0%, 70%);
+	--highlight: hsl(212, 47%, 47%);
 }
 
 /* https://colorhunt.co/palette/f9f7f7dbe2ef3f72af112d4e */
-[data-theme="dark"] {
-	--background: #f9f7f7;
-	--alt-background: #dbe2ef;
-	--highlight: #3f73af;
-	--foreground: #112d4e;
+[data-theme="light"] {
+	--bg-dark: hsl(0, 14%, 97%);
+	--bg: hsl(219, 38.5%, 90%);
+	--bg-light: hsl(219, 38.5, 83%);
+	--text: hsl(212, 64%, 29%);
+	--text-muted: hsl(212, 64%, 9%);
+	--highlight: hsl(212, 90%, 70%);
 }
 
 body {
-	background: var(--background);
-	color: var(--foreground);
+	background: var(--bg-dark);
+	color: var(--text);
 	transition: background-color 0.5s, color 0.5s;
 }
 
 /* 
 * yeah used ai for this scroll bar stuff
-* only used it in app/layout.tsx
+* only used in app/layout.tsx
 */
 @layer utilities {
 
