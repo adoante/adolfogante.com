@@ -15,17 +15,17 @@ export default function Fun() {
 	const cats = getCatFiles()
 
 	return (
-		<main className="space-y-10 mx-5">
-			<h1 className="text-4xl font-bold text-center">Fun 😄</h1>
-			<p className="text-center">
+		<main className="mx-auto max-w-5xl w-full px-5 text-left space-y-10">
+			<h1 className="text-4xl font-bold">Fun 😄</h1>
+			<p>
 				This page is mostly a bunch of unrelated stuff I want people to see and check out.
 			</p>
 
-			<section className="flex flex-col items-center space-y-10">
+			<section className="flex flex-col space-y-10">
 
 				<h2 className="text-3xl font-semibold">Cat Pictures</h2>
 
-				<p className="text-center">
+				<p>
 					These are some of my favorite pictures of my cat Lizzy.
 				</p>
 
