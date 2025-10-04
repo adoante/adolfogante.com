@@ -32,6 +32,19 @@ export default function Work() {
 							/>
 						}
 					/>
+					<Project
+						title="ApprAIse"
+						caption="Benchmarking AI models using Qualcomm AI Hub."
+						link="https://appraise-benchmark.com/"
+						image={
+							<Image
+								src="/projects/appraise.png"
+								alt="cat gif"
+								width={250}
+								height={250}
+							/>
+						}
+					/>
 				</div>
 			</section>
 		</main>
