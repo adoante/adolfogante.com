@@ -6,7 +6,7 @@ import DarkModeToggle from "./DarkModeToggle"
 
 const Footer = () => {
 	return (
-		<footer className="flex flex-col items-center text-center text-sm md:p-20 p-5 md:space-y-8 space-y-4">
+		<footer className="flex flex-col items-center text-center text-sm md:p-20 py-8 px-5 md:space-y-8 space-y-4">
 
 			{/* Social Links */}
 			<div className="flex space-x-4">
@@ -22,7 +22,10 @@ const Footer = () => {
 				))}
 			</div>
 			<p>
-				Contact me at: <Link className="hover:text-[var(--highlight)]" href="mailto:adolfogante@gmail.com"> adolfogante@gmail.com</Link> or send me a <Link className="text-[var(--highlight)]" href="/">ticket message</Link>.
+				Contact me at: <Link className="hover:text-[var(--highlight)]" href="mailto:adolfogante@gmail.com"> adolfogante@gmail.com</Link>
+			</p>
+			<p>
+				or send me a <Link className="text-[var(--highlight)] hover:text-[var(--text)]" href="/">ticket message</Link>.
 			</p>
 			<DarkModeToggle />
 		</footer>

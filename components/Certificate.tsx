@@ -1,6 +1,6 @@
 "use client"
 
-import { Dialog, DialogPanel, DialogTitle, DialogBackdrop, Description } from "@headlessui/react"
+import { Dialog, DialogPanel, DialogTitle, DialogBackdrop, Description, Button } from "@headlessui/react"
 import { motion } from "motion/react"
 import { useState } from "react"
 import Image from "next/image"
@@ -12,14 +12,16 @@ interface CertificateProps {
 	src: string
 }
 
+const MotionButton = motion.create(Button)
+
 const Certificate = ({ school, name, awared, src }: CertificateProps) => {
 	const [isOpen, setIsOpen] = useState(false)
 
 	return (
 		<>
-			<motion.button
+			<MotionButton
 				whileHover={{
-					scale: 1.1,
+					scale: 1.025,
 					transition: { duration: 0.1 }
 				}}
 				onClick={() => setIsOpen(true)}
@@ -27,7 +29,7 @@ const Certificate = ({ school, name, awared, src }: CertificateProps) => {
 				<h4 className="text-xl font-semibold">{school}</h4>
 				<p>{name}</p>
 				<p>{awared}</p>
-			</motion.button>
+			</MotionButton>
 
 			<Dialog open={isOpen} onClose={() => setIsOpen(false)}>
 				<motion.div
@@ -41,13 +43,13 @@ const Certificate = ({ school, name, awared, src }: CertificateProps) => {
 							<span className="flex flex-row items-center justify-between">
 								<DialogTitle className="my-2 dark:text-white">{school}</DialogTitle>
 
-								<motion.button
+								<MotionButton
 									whileHover={{ scale: 1.1 }}
 									className="text-center cursor-pointer px-2 py-1 h-min dark:text-white hover:text-[var(--highlight)]"
 									onClick={() => setIsOpen(false)}
 								>
 									Close
-								</motion.button>
+								</MotionButton>
 							</span>
 
 							<Image

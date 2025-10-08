@@ -1,6 +1,6 @@
 "use client"
 
-import { Description, Dialog, DialogPanel, DialogTitle, DialogBackdrop, Button, CloseButton } from "@headlessui/react"
+import { Description, Dialog, DialogPanel, DialogTitle, DialogBackdrop, Button } from "@headlessui/react"
 import { motion } from "motion/react"
 import Image from "next/image"
 import { useState } from "react"
@@ -15,14 +15,16 @@ interface LightboxProps {
 	heightLg: number
 }
 
-export default function Lightbox({ src, title, description, width, height, widthLg, heightLg }: LightboxProps) {
+const MotionButton = motion.create(Button)
+
+const Lightbox = ({ src, title, description, width, height, widthLg, heightLg }: LightboxProps) => {
 	const [isOpen, setIsOpen] = useState(false)
 
 	return (
 		<>
-			<motion.button
+			<MotionButton
 				whileHover={{
-					scale: 1.3,
+					scale: 1.1,
 					transition: { duration: 0.1 }
 				}}
 				onClick={() => setIsOpen(true)}
@@ -35,7 +37,7 @@ export default function Lightbox({ src, title, description, width, height, width
 					height={height}
 					className="shadow-2xl bg-white p-2"
 				/>
-			</motion.button>
+			</MotionButton>
 			<Dialog open={isOpen} onClose={() => setIsOpen(false)}>
 				<motion.div
 					initial={{ opacity: 0 }}
@@ -47,13 +49,13 @@ export default function Lightbox({ src, title, description, width, height, width
 						<DialogPanel className="m-5">
 							<span className="flex flex-row justify-between items-center">
 								<DialogTitle className="my-2 dark:text-white">{title}</DialogTitle>
-								<motion.button
+								<MotionButton
 									whileHover={{ scale: 1.1 }}
 									className="text-center cursor-pointer px-2 py-1 h-min dark:text-white hover:text-[var(--highlight)]"
 									onClick={() => setIsOpen(false)}
 								>
 									Close
-								</motion.button>
+								</MotionButton>
 
 							</span>
 							<Image
@@ -74,3 +76,6 @@ export default function Lightbox({ src, title, description, width, height, width
 		</>
 	)
 }
+
+export { Lightbox }
+export type { LightboxProps }

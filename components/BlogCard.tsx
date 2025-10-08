@@ -16,7 +16,7 @@ const BlogCard = ({ slug, title, date, summary }: BlogCardProps) => {
 	return (
 		<MotionLink
 			whileHover={{
-				scale: 1.0125,
+				scale: 1.025,
 				transition: { duration: 0.1 }
 			}}
 			href={`/blog/${slug}`}
@@ -30,6 +30,9 @@ const BlogCard = ({ slug, title, date, summary }: BlogCardProps) => {
 			</p>
 			<p className="text-[var(--text-muted)]">
 				{summary}
+			</p>
+			<p className="text-xs">
+				Read More...
 			</p>
 		</MotionLink>
 	)

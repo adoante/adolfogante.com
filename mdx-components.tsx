@@ -1,3 +1,5 @@
+import { Lightbox, LightboxProps } from './components/Lightbox'
+import Image, { ImageProps } from 'next/image'
 import type { MDXComponents } from 'mdx/types'
 
 const components = {
@@ -25,6 +27,10 @@ const components = {
 			{children}
 		</p>
 	),
+	img: (props: ImageProps) => {
+		const { src, alt, width = 250, height = 250 } = props
+		return <Image src={src} title={alt} alt={alt} width={width} height={height} />
+	},
 } satisfies MDXComponents
 
 export function useMDXComponents(): MDXComponents {

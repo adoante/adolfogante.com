@@ -5,7 +5,7 @@ import { ImageProps } from "next/image"
 import Link from "next/link"
 import { cloneElement } from "react"
 
-interface ProjectProps {
+interface ProjectCardProps {
 	title: string
 	caption: string
 	image: React.ReactElement<ImageProps>
@@ -14,14 +14,14 @@ interface ProjectProps {
 
 const MotionLink = motion(Link)
 
-const Project = ({ title, caption, image, link }: ProjectProps) => {
+const ProjectCard = ({ title, caption, image, link }: ProjectCardProps) => {
 	const styledImage = cloneElement(image, {
 		className: `${image.props.className ?? ""} aspect-square object-cover`
 	})
 	return (
 		<MotionLink
 			whileHover={{
-				scale: 1.05,
+				scale: 1.025,
 				transition: { duration: 0.1 }
 			}}
 			href={link}
@@ -37,4 +37,5 @@ const Project = ({ title, caption, image, link }: ProjectProps) => {
 	)
 }
 
-export { Project }
+export { ProjectCard }
+export type { ProjectCardProps }

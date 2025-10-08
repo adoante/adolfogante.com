@@ -13,7 +13,7 @@ export default function Home() {
 				<p className="text-[var(--text-muted)]">
 					Finally, modern tech allows us to send text over the internet and then physically print it.
 					Fill out the form below to send me a message that will be physically printed from a <a
-						className="text-[var(--highlight)]"
+						className="text-[var(--highlight)] hover:text-[var(--text)]"
 						href="https://duckduckgo.com/?q=What+is+a+thermal+receipt+printer"
 						target="_norefer">
 						thermal receipt printer

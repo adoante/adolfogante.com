@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import Lightbox from "@/components/Lightbox";
+import { Lightbox } from "@/components/Lightbox";
 
 export function getCatFiles(): string[] {
 	const catsDir = path.join(process.cwd(), "public", "cat");

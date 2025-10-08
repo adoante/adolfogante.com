@@ -1,4 +1,4 @@
-import { Project } from "@/components/Project";
+import { ProjectCard } from "@/components/ProjectCard";
 import Image from "next/image";
 
 export default function Work() {
@@ -19,7 +19,7 @@ export default function Work() {
 				<p>Super simple project-based learning.</p>
 
 				<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 place-items-center">
-					<Project
+					<ProjectCard
 						title="catpictures.xyz"
 						caption="Look at some cat pictures and occasionally gifs."
 						link="https://catpictures.xyz/"
@@ -32,7 +32,7 @@ export default function Work() {
 							/>
 						}
 					/>
-					<Project
+					<ProjectCard
 						title="ApprAIse"
 						caption="Benchmarking AI models using Qualcomm AI Hub."
 						link="https://appraise-benchmark.com/"
