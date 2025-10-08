@@ -22,7 +22,7 @@ export default function Home() {
 				</p>
 
 				<p className="text-[var(--text-muted)]">
-					In case it{`'`}s something important you can contact me using email: <Link className="hover:text-[var(--highlight)]" href="mailto:adolfogante@gmail.com">adolfogante@gmail.com</Link>
+					In case it{`'`}s something important you can contact me using email: <Link className="hover:text-[var(--text)] text-[var(--highlight)]" href="mailto:adolfogante@gmail.com">adolfogante@gmail.com</Link>
 				</p>
 
 

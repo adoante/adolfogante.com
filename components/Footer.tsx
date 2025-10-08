@@ -22,10 +22,10 @@ const Footer = () => {
 				))}
 			</div>
 			<p>
-				Contact me at: <Link className="hover:text-[var(--highlight)]" href="mailto:adolfogante@gmail.com"> adolfogante@gmail.com</Link>
+				Contact me at <Link className="hover:text-[var(--text)] text-[var(--highlight)]" href="mailto:adolfogante@gmail.com">adolfogante@gmail.com</Link>
 			</p>
 			<p>
-				or send me a <Link className="text-[var(--highlight)] hover:text-[var(--text)]" href="/">ticket message</Link>.
+				or send me a <Link className="text-[var(--highlight)] hover:text-[var(--text)]" href="/">ticket message</Link>
 			</p>
 			<DarkModeToggle />
 		</footer>
