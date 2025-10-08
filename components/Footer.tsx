@@ -21,7 +21,8 @@ const Footer = () => {
 					</Link>
 				))}
 			</div>
-			<p>Contact me at: <Link className="hover:text-[var(--highlight)]" href="mailto:adolfogante@gmail.com"> adolfogante@gmail.com</Link>
+			<p>
+				Contact me at: <Link className="hover:text-[var(--highlight)]" href="mailto:adolfogante@gmail.com"> adolfogante@gmail.com</Link> or send me a <Link className="text-[var(--highlight)]" href="/">ticket message</Link>.
 			</p>
 			<DarkModeToggle />
 		</footer>

@@ -10,7 +10,7 @@ interface BlogCardProps {
 	summary: string
 }
 
-const MotionLink = motion(Link)
+const MotionLink = motion.create(Link)
 
 const BlogCard = ({ slug, title, date, summary }: BlogCardProps) => {
 	return (
