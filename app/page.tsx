@@ -1,5 +1,6 @@
 import { Contact } from "@/components/Contact"
 import { Quote } from "@/components/Quote"
+import Link from "next/link"
 
 export default function Home() {
 	return (
@@ -19,6 +20,11 @@ export default function Home() {
 						thermal receipt printer
 					</a>.
 				</p>
+
+				<p className="text-[var(--text-muted)]">
+					In case it{`'`}s something important you can contact using email: <Link className="hover:text-[var(--highlight)]" href="mailto:adolfogante@gmail.com">adolfogante@gmail.com</Link>
+				</p>
+
 
 				<Contact />
 			</section>
