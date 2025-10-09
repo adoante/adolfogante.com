@@ -62,22 +62,24 @@ const Contact = () => {
 	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault()
 
-		if (message.length >= 280) {
-			setIsValidMessage(false)
-			setValidationError("")
-			setValidationError("Yes, there's a limit. 😔")
-			setSubmitted(false)
-			return
-		}
+		const form = e.currentTarget
 
-		const formData = new FormData(e.currentTarget as HTMLFormElement)
+		const name = (form.elements.namedItem("name") as HTMLInputElement).value
+		const email = (form.elements.namedItem("email") as HTMLInputElement).value
+		const message = (form.elements.namedItem("message") as HTMLTextAreaElement).value
+
+		const formData = new URLSearchParams()
+		formData.append("name", name)
+		formData.append("email", email)
+		formData.append("message", message)
 
 		const res = await fetch(`${process.env.NEXT_PUBLIC_TICKET_API_URL}/submit`, {
 			method: "POST",
 			headers: {
+				"Content-Type": "application/x-www-form-urlencoded",
 				"Authorization": `Bearer ${process.env.NEXT_PUBLIC_TICKET_API_TOKEN}`,
 			},
-			body: formData
+			body: formData.toString(),
 		})
 
 		if (res.ok) {
@@ -85,7 +87,6 @@ const Contact = () => {
 		} else {
 			setSubmitted(false)
 		}
-
 	}
 
 	return (
