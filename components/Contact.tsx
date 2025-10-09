@@ -78,7 +78,7 @@ const Contact = () => {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/x-www-form-urlencoded",
-				"Authorization": `Bearer ${process.env.NEXT__TICKET_API_TOKEN}`,
+				"Authorization": `Bearer ${process.env.NEXT_PUBLIC_TICKET_API_TOKEN}`,
 			},
 			body: formData.toString(),
 		})
