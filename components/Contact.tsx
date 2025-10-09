@@ -15,6 +15,7 @@ const Contact = () => {
 	const [isValidName, setIsValidName] = useState(true)
 	const [isValidEmail, setIsValidEmail] = useState(true)
 	const [isValidMessage, setIsValidMessage] = useState(true)
+	const [failed, setFailed] = useState(false)
 
 	const handleInvalid = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault()
@@ -77,15 +78,17 @@ const Contact = () => {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/x-www-form-urlencoded",
-				"Authorization": `Bearer ${process.env.NEXT_PUBLIC_TICKET_API_TOKEN}`,
+				"Authorization": `Bearer ${process.env.NEXT__TICKET_API_TOKEN}`,
 			},
 			body: formData.toString(),
 		})
 
 		if (res.ok) {
 			setSubmitted(true)
+			form.reset()
 		} else {
 			setSubmitted(false)
+			setFailed(true)
 		}
 	}
 
@@ -170,6 +173,10 @@ const Contact = () => {
 
 					{submitted && (
 						<p className="text-green-400">Message sent!</p>
+					)}
+
+					{failed && (
+						<p className="text-red-400">Not sent!</p>
 					)}
 				</span>
 
