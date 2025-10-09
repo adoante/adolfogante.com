@@ -6,7 +6,11 @@ import Link from "next/link"
 import { useEffect } from "react"
 export default function Home() {
 	useEffect(() => {
-		fetch("https://ticket-api-2681.onrender.com/tickets")
+		fetch(`${process.env.TICKET_API_URL}/tickets`, {
+			headers: {
+				"Authorization": `Bearer ${process.env.TICKET_API_TOKEN}`,
+			},
+		})
 			.then(response => {
 				if (!response.ok) {
 					throw new Error("Network response was not ok");
