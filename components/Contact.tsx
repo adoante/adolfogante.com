@@ -75,7 +75,7 @@ const Contact = () => {
 		const res = await fetch(`${process.env.NEXT_PUBLIC_TICKET_API_URL}/submit`, {
 			method: "POST",
 			headers: {
-				"Authorization": `Bearer ${process.env.NEXT_TICKET_API_TOKEN}`,
+				"Authorization": `Bearer ${process.env.NEXT_PUBLIC_TICKET_API_TOKEN}`,
 			},
 			body: formData
 		})
