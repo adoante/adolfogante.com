@@ -1,8 +1,26 @@
+"use client"
+
 import { Contact } from "@/components/Contact"
 import { Quote } from "@/components/Quote"
 import Link from "next/link"
-
+import { useEffect } from "react"
 export default function Home() {
+	useEffect(() => {
+		fetch("https://ticket-api-2681.onrender.com/tickets")
+			.then(response => {
+				if (!response.ok) {
+					throw new Error("Network response was not ok");
+				}
+				return response.json(); // parse JSON body
+			})
+			.then(data => {
+				console.log(data); // handle the returned data
+			})
+			.catch(error => {
+				console.error("Fetch error:", error);
+			})
+	}, [])
+
 	return (
 		<main className="mx-auto max-w-5xl w-full px-5 text-left space-y-10">
 			<Quote quote="It can always get worse." cite="sombody" />
