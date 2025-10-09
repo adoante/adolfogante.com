@@ -6,9 +6,9 @@ import Link from "next/link"
 import { useEffect } from "react"
 export default function Home() {
 	useEffect(() => {
-		fetch(`${process.env.TICKET_API_URL}/tickets`, {
+		fetch(`${process.env.NEXT_PUBLIC_TICKET_API_URL}/tickets`, {
 			headers: {
-				"Authorization": `Bearer ${process.env.TICKET_API_TOKEN}`,
+				"Authorization": `Bearer ${process.env.NEXT_PUBLIC_TICKET_API_TOKEN}`,
 			},
 		})
 			.then(response => {
