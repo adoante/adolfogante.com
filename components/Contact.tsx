@@ -59,7 +59,7 @@ const Contact = () => {
 		setValidationError("")
 	}
 
-	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault()
 
 		if (message.length >= 280) {
@@ -70,14 +70,23 @@ const Contact = () => {
 			return
 		}
 
-		setSubmitted(true)
+		const formData = new FormData(e.currentTarget as HTMLFormElement)
 
-		const formData = new FormData(e.currentTarget)
-		const name = formData.get("name")
-		const email = formData.get("email")
-		const msg = formData.get("message")
+		const res = await fetch(`${process.env.NEXT_PUBLIC_TICKET_API_URL}/submit`, {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+				"Authorization": `Bearer ${process.env.NEXT_PUBLIC_API_TOKEN}`,
+			},
+			body: formData
+		});
 
-		console.log({ name, email, msg })
+		if (res.ok) {
+			setSubmitted(true)
+		} else {
+			setSubmitted(false)
+		}
+
 	}
 
 	return (

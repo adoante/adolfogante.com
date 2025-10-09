@@ -1,30 +1,8 @@
-"use client"
-
 import { Contact } from "@/components/Contact"
 import { Quote } from "@/components/Quote"
 import Link from "next/link"
-import { useEffect } from "react"
-export default function Home() {
-	useEffect(() => {
-		fetch(`${process.env.NEXT_PUBLIC_TICKET_API_URL}/tickets`, {
-			headers: {
-				"Authorization": `Bearer ${process.env.NEXT_PUBLIC_TICKET_API_TOKEN}`,
-			},
-		})
-			.then(response => {
-				if (!response.ok) {
-					throw new Error("Network response was not ok");
-				}
-				return response.json(); // parse JSON body
-			})
-			.then(data => {
-				console.log(data); // handle the returned data
-			})
-			.catch(error => {
-				console.error("Fetch error:", error);
-			})
-	}, [])
 
+export default function Home() {
 	return (
 		<main className="mx-auto max-w-5xl w-full px-5 text-left space-y-10">
 			<Quote quote="It can always get worse." cite="sombody" />
