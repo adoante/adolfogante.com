@@ -86,6 +86,8 @@ const Contact = () => {
 		if (res.ok) {
 			setSubmitted(true)
 			form.reset()
+			setEmail("")
+			setMessage("")
 		} else {
 			setSubmitted(false)
 			setFailed(true)
