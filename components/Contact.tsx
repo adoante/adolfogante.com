@@ -69,17 +69,14 @@ const Contact = () => {
 		const email = (form.elements.namedItem("email") as HTMLInputElement).value
 		const message = (form.elements.namedItem("message") as HTMLTextAreaElement).value
 
-		const formData = new URLSearchParams()
-		formData.append("name", name)
-		formData.append("email", email)
-		formData.append("message", message)
+		const ticket = { name, email, message }
 
 		const res = await fetch("/api/tickets", {
 			method: "POST",
 			headers: {
-				"Content-Type": "application/x-www-form-urlencoded",
+				"Content-Type": "application/json",
 			},
-			body: formData.toString(),
+			body: JSON.stringify(ticket),
 		})
 
 		if (res.ok) {

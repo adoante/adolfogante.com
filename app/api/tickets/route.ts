@@ -1,24 +1,22 @@
 import { NextResponse } from "next/server"
 
 export async function POST(req: Request) {
-	const bodyText = await req.text()
+	const ticket = await req.json()
 
 	const res = await fetch(`${process.env.TICKET_API_URL}/tickets`, {
 		method: "POST",
 		headers: {
-			"Content-Type": "application/x-www-form-urlencoded",
+			"Content-Type": "application/json",
 			"Authorization": `Bearer ${process.env.TICKET_API_TOKEN}`,
 		},
-		body: bodyText,
+		body: JSON.stringify(ticket),
 	})
-
-	if (res.ok) {
-		console.log("Created Ticket")
-	} else {
-		console.log("Failed to create Ticket")
-	}
 
 	const data = await res.json()
 
-	return NextResponse.json(data)
+	if (res.ok) {
+		return NextResponse.json(data, { status: res.status })
+	} else {
+		return NextResponse.json(data, { status: res.status })
+	}
 }
