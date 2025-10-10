@@ -74,11 +74,10 @@ const Contact = () => {
 		formData.append("email", email)
 		formData.append("message", message)
 
-		const res = await fetch(`${process.env.NEXT_PUBLIC_TICKET_API_URL}/tickets`, {
+		const res = await fetch("api/tickets", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/x-www-form-urlencoded",
-				"Authorization": `Bearer ${process.env.NEXT_PUBLIC_TICKET_API_TOKEN}`,
 			},
 			body: formData.toString(),
 		})
