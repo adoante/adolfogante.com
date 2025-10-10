@@ -74,7 +74,7 @@ const Contact = () => {
 		formData.append("email", email)
 		formData.append("message", message)
 
-		const res = await fetch("api/tickets", {
+		const res = await fetch("/api/tickets", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/x-www-form-urlencoded",

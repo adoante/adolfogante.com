@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server"
 
 export async function POST(req: Request) {
-	const formData = await req.formData()
+	const bodyText = await req.text()
 
 	const res = await fetch(`${process.env.TICKET_API_URL}/tickets`, {
 		method: "POST",
@@ -9,7 +9,7 @@ export async function POST(req: Request) {
 			"Content-Type": "application/x-www-form-urlencoded",
 			"Authorization": `Bearer ${process.env.TICKET_API_TOKEN}`,
 		},
-		body: formData.toString(),
+		body: bodyText,
 	})
 
 	if (res.ok) {
