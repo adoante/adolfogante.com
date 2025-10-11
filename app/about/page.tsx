@@ -2,7 +2,7 @@ import { Certificate } from "@/components/Certificate";
 
 export default function About() {
 	return (
-		<main className="mx-auto max-w-5xl w-full px-5 space-y-10 text-left">
+		<main className="space-y-10">
 			<h1 className="text-4xl font-bold">About</h1>
 
 			<section className="flex flex-col space-y-10">

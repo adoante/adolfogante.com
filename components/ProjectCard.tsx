@@ -16,7 +16,7 @@ const MotionLink = motion(Link)
 
 const ProjectCard = ({ title, caption, image, link }: ProjectCardProps) => {
 	const styledImage = cloneElement(image, {
-		className: `${image.props.className ?? ""} aspect-square object-cover`
+		className: `${image.props.className ?? ""}  aspect-square object-cover`
 	})
 	return (
 		<MotionLink
@@ -26,7 +26,7 @@ const ProjectCard = ({ title, caption, image, link }: ProjectCardProps) => {
 			}}
 			href={link}
 			target="_blank"
-			className="flex flex-col items-center bg-[var(--bg)] border-b-4 md:border-b-8 border-b-[var(--highlight)] hover:bg-[var(--bg-light)] cursor-pointer max-w-[250px] shadow-2xl w-full"
+			className="flex flex-col bg-[var(--bg)] border-b-4 md:border-b-8 border-b-[var(--highlight)] hover:bg-[var(--bg-light)] cursor-pointer md:max-w-[250px] shadow-md shadow-[color:var(--shadow)]"
 		>
 			{styledImage}
 			<div className="p-5 space-y-2">

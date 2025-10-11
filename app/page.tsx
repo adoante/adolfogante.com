@@ -4,7 +4,7 @@ import Link from "next/link"
 
 export default function Home() {
 	return (
-		<main className="mx-auto max-w-5xl w-full px-5 text-left space-y-10">
+		<main className="space-y-10">
 			<Quote quote="It can always get worse." cite="sombody" />
 
 			<section className="flex flex-col space-y-10">

@@ -1,22 +1,24 @@
 @import "tailwindcss";
 
 :root {
-	--bg-dark: hsl(216, 18%, 17%);
-	--bg: hsl(216, 18%, 23%);
-	--bg-light: hsl(216, 18%, 28%);
+	--bg-dark: hsl(220, 30%, 10%);
+	--bg: hsl(220, 20%, 15%);
+	--bg-light: hsl(220, 20%, 25%);
 	--text: hsl(0, 0%, 95%);
 	--text-muted: hsl(0, 0%, 80%);
-	--highlight: hsl(211, 100%, 62%);
+	--highlight: hsl(200, 100%, 60%);
+	--shadow: hsla(220, 40%, 15%, 0.5);
 }
 
 /* https://colorhunt.co/palette/f9f7f7dbe2ef3f72af112d4e */
 [data-theme="light"] {
 	--bg-dark: hsl(0, 14%, 97%);
 	--bg: hsl(219, 38.5%, 90%);
-	--bg-light: hsl(219, 38.5, 83%);
+	--bg-light: hsl(219, 38.5%, 83%);
 	--text: hsl(212, 64%, 29%);
 	--text-muted: hsl(212, 64%, 19%);
 	--highlight: hsl(212, 90%, 70%);
+	--shadow: hsla(220, 30%, 50%, 0.25);
 }
 
 body {

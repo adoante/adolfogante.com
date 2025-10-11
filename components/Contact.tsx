@@ -92,7 +92,7 @@ const Contact = () => {
 
 	return (
 		<form onSubmit={handleSubmit} noValidate={false} onInvalid={handleInvalid}>
-			<Fieldset className="bg-[var(--bg)] space-y-6 py-5 px-8 border-t-8 border-b-8 border-[var(--highlight)] shadow-2xl">
+			<Fieldset className="bg-[var(--bg)] space-y-6 py-5 px-8 border-t-8 border-b-8 border-[var(--highlight)] shadow-md shadow-[color:var(--shadow)]">
 				<Legend className="text-2xl font-bold">Print a Ticket</Legend>
 
 				<Field>

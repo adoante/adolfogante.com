@@ -22,7 +22,7 @@ export default async function Blog() {
 	posts.sort((a, b) => new Date(b.metadata.date).getTime() - new Date(a.metadata.date).getTime())
 
 	return (
-		<main className="mx-auto max-w-5xl w-full px-5 space-y-10 text-left">
+		<main className="space-y-10">
 			<h1 className="text-4xl font-bold">Blog</h1>
 			<p>
 				Check out what could have just been a post on a Twitter.

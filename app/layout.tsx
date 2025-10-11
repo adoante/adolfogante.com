@@ -24,7 +24,7 @@ export default function RootLayout({
 				className="flex flex-col min-h-screen overflow-y-scroll"
 			>
 				<NavBar />
-				<main className="flex-1">
+				<main className="flex-1 mx-auto max-w-4xl w-full px-5 text-left">
 					{children}
 				</main>
 				<Footer />

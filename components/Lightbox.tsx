@@ -35,7 +35,7 @@ const Lightbox = ({ src, title, description, width, height, widthLg, heightLg }:
 					title={description}
 					width={width}
 					height={height}
-					className="shadow-2xl bg-white p-2"
+					className="shadow-md shadow-[color:var(--shadow)] bg-white p-2"
 				/>
 			</MotionButton>
 			<Dialog open={isOpen} onClose={() => setIsOpen(false)}>
