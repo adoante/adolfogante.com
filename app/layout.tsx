@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/vue"
 import type { Metadata } from "next"
 import { Fira_Code } from "next/font/google"
 import "./globals.css"
@@ -26,6 +27,7 @@ export default function RootLayout({
 				<NavBar />
 				<main className="flex-1 mx-auto max-w-4xl w-full px-5 text-left">
 					{children}
+					<Analytics />
 				</main>
 				<Footer />
 			</body>
