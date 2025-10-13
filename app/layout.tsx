@@ -1,4 +1,4 @@
-import { Analytics } from "@vercel/analytics/vue"
+import { Analytics } from "@vercel/analytics/next"
 import type { Metadata } from "next"
 import { Fira_Code } from "next/font/google"
 import "./globals.css"
