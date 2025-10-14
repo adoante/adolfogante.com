@@ -17,17 +17,17 @@ const NavBar = () => {
 	]
 
 	return (
-		<nav className="grid grid-cols-3 place-items-center text-center md:p-15 p-5">
+		<nav className="grid grid-cols-3 justify-between place-items-center md:p-15 py-5">
 
 			<Link
-				className={`text-2xl font-bold hover:text-[var(--highlight)] ${pathname == "/" ? "text-[var(--highlight)]" : ""
+				className={`text-2xl font-bold md:w-max w-min hover:text-[var(--highlight)] ${pathname == "/" ? "text-[var(--highlight)]" : ""
 					}`}
 				href="/"
 			>
 				Adolfo Gante
 			</Link>
 			{/* Pages */}
-			<div className="flex md:flex-row flex-col md:space-x-4 text-lg">
+			<div className="flex md:flex-row flex-col md:space-x-4 text-lg w-min">
 				{links.map(([title, url]) => {
 					const active = pathname == url
 					return (
@@ -44,7 +44,7 @@ const NavBar = () => {
 			</div>
 
 			{/* Social Links */}
-			<div className="flex space-x-4">
+			<div className="flex flex-row space-x-2">
 				{[
 					["https://drive.google.com/file/d/1IJtaDaHiNDXSQ-6YRPWkqblL5wZrMc_Q/view?usp=drive_link", <ReadCvLogoIcon className="w-7 h-7" key="resume" />],
 					["https://github.com/adoante/", <GithubLogoIcon className="w-7 h-7" key="github" />],
