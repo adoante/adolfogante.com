@@ -1,6 +1,11 @@
+import type { Metadata } from 'next';
 import fs from "fs";
 import path from "path";
 import { Lightbox } from "@/components/Lightbox";
+
+export const metadata: Metadata = {
+	title: "Fun"
+}
 
 export function getCatFiles(): string[] {
 	const catsDir = path.join(process.cwd(), "public", "cat");

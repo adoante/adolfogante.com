@@ -1,7 +1,12 @@
 import { BlogCard } from "@/components/BlogCard"
 import { Quote } from "@/components/Quote"
 import fs from "fs"
+import { Metadata } from "next"
 import path from "path"
+
+export const metadata: Metadata = {
+	title: "Blog"
+}
 
 export default async function Blog() {
 	const postsDir = path.join(process.cwd(), "markdown")
@@ -34,7 +39,7 @@ export default async function Blog() {
 
 			<h2 className="text-3xl font-semibold">Recent Posts</h2>
 
-			<div className="space-y-10">
+			<div className="space-y-2">
 				{posts.map(({ metadata, slug }) => (
 					<BlogCard
 						key={slug}

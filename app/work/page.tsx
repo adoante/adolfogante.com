@@ -1,5 +1,10 @@
+import type { Metadata } from 'next';
 import { ProjectCard } from "@/components/ProjectCard";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+	title: "Work"
+}
 
 export default function Work() {
 	return (

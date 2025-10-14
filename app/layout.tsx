@@ -10,8 +10,14 @@ const fira = Fira_Code({
 })
 
 export const metadata: Metadata = {
-	title: "Adolfo Gante",
-	description: "it can get a whole lot worse",
+	title: {
+		default: "Adolfo Gante",
+		template: "%s | Adolfo Gante"
+	},
+	description: "My personal website",
+	twitter: {
+		card: "summary_large_image"
+	}
 }
 
 export default function RootLayout({
