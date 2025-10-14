@@ -2,7 +2,8 @@ import { Certificate } from "@/components/Certificate";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-	title: "About"
+	title: "About",
+	description: "Stuff all about me."
 }
 
 export default function About() {

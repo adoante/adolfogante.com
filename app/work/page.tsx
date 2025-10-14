@@ -3,7 +3,8 @@ import { ProjectCard } from "@/components/ProjectCard";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-	title: "Work"
+	title: "Work",
+	description: "Work I've done including side and learning projects."
 }
 
 export default function Work() {

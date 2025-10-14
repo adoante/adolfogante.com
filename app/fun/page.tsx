@@ -4,7 +4,8 @@ import path from "path";
 import { Lightbox } from "@/components/Lightbox";
 
 export const metadata: Metadata = {
-	title: "Fun"
+	title: "Fun",
+	description: "A bunch of unrelated stuff I want people to see and check out."
 }
 
 export function getCatFiles(): string[] {

@@ -5,7 +5,8 @@ import { Metadata } from "next"
 import path from "path"
 
 export const metadata: Metadata = {
-	title: "Blog"
+	title: "Blog",
+	description: "Check out what could have just been a post on Twitter."
 }
 
 export default async function Blog() {
