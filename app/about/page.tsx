@@ -29,14 +29,14 @@ export default function About() {
 					<Certificate
 						school="California State University San Marcos"
 						name="Bachelors of Science in Computer Science"
-						awared="Graduated 2025"
+						awarded="Graduated 2025"
 						src="/cert/csusm_degree.webp"
 					/>
 
 					<Certificate
 						school="Palomar College"
 						name="Associates of Science in Computer Science"
-						awared="Graduated 2023"
+						awarded="Graduated 2023"
 						src="/cert/palomar_college_degree.webp"
 					/>
 				</div>
