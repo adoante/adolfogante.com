@@ -13,7 +13,8 @@ type BlogPostMetadata = {
 	summary: string
 }
 
-export async function generateMetadata({ params: { slug } }: BlogPostPageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
+	const { slug } = await params
 	const { metadata }: { metadata: BlogPostMetadata } = await import(`@/markdown/${slug}.mdx`)
 
 	return {
@@ -22,8 +23,8 @@ export async function generateMetadata({ params: { slug } }: BlogPostPageProps):
 	}
 }
 
-export default async function Page({ params }: { params: { slug: string } }) {
-	const { slug } = params
+export default async function Page({ params }: BlogPostPageProps) {
+	const { slug } = await params
 	const { default: Post } = await import(`@/markdown/${slug}.mdx`)
 	return <Post />
 }

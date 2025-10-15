@@ -6,9 +6,8 @@ import DarkModeToggle from "./DarkModeToggle"
 
 const Footer = () => {
 	return (
-		<footer className="flex flex-col items-center text-center text-sm md:p-20 py-8 px-5 md:space-y-8 space-y-4">
+		<footer className="flex flex-col mx-auto py-10 space-y-4">
 
-			{/* Social Links */}
 			<div className="flex space-x-4">
 				{[
 					["https://drive.google.com/file/d/1IJtaDaHiNDXSQ-6YRPWkqblL5wZrMc_Q/view?usp=drive_link", <ReadCvLogoIcon className="w-7 h-7" key="resume" />],

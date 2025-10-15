@@ -1,20 +1,19 @@
 "use client"
 
-import { Dialog, DialogPanel, DialogTitle, DialogBackdrop, Description, Button } from "@headlessui/react"
+import { Dialog, DialogPanel, DialogTitle, DialogBackdrop, Description } from "@headlessui/react"
 import { motion } from "motion/react"
-import { useState } from "react"
+import { MotionButton } from "@/lib/MotionElements"
 import Image from "next/image"
+import { useState } from "react"
 
 interface CertificateProps {
 	school: string
 	name: string
-	awared: string
+	awarded: string
 	src: string
 }
 
-const MotionButton = motion.create(Button)
-
-const Certificate = ({ school, name, awared, src }: CertificateProps) => {
+const Certificate = ({ school, name, awarded, src }: CertificateProps) => {
 	const [isOpen, setIsOpen] = useState(false)
 
 	return (
@@ -28,7 +27,7 @@ const Certificate = ({ school, name, awared, src }: CertificateProps) => {
 				className="bg-[var(--bg)] md:p-8 p-5 border-t-5 md:border-t-10 border-t-[var(--highlight)] hover:bg-[var(--bg-light)] cursor-pointer text-left space-y-2 shadow-md shadow-[color:var(--shadow)]">
 				<h4 className="text-xl font-semibold">{school}</h4>
 				<p>{name}</p>
-				<p>{awared}</p>
+				<p>{awarded}</p>
 			</MotionButton>
 
 			<Dialog open={isOpen} onClose={() => setIsOpen(false)}>
@@ -60,7 +59,7 @@ const Certificate = ({ school, name, awared, src }: CertificateProps) => {
 								height={800}
 								className="bg-white p-2"
 							/>
-							<Description className="my-2 dark:text-white">{awared}</Description>
+							<Description className="my-2 dark:text-white">{awarded}</Description>
 
 						</DialogPanel>
 					</div>

@@ -2,11 +2,11 @@ import type { ReactNode } from "react";
 
 export default function BlogLayout({ children }: { children: ReactNode }) {
 	return (
-		<div className="mx-auto max-w-5xl w-full px-5 text-left">
+		<main className="space-y-10">
 			<h1 className="text-4xl font-bold">Blog</h1>
-			<article>
+			<article className="space-y-4">
 				{children}
 			</article>
-		</div>
+		</main>
 	);
 }

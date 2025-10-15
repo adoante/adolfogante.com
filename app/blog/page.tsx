@@ -1,4 +1,4 @@
-import { BlogCard } from "@/components/BlogCard"
+import { BlogCard } from "@/components/Blog"
 import { Quote } from "@/components/Quote"
 import fs from "fs"
 import { Metadata } from "next"
@@ -40,7 +40,7 @@ export default async function Blog() {
 
 			<h2 className="text-3xl font-semibold">Recent Posts</h2>
 
-			<div className="space-y-2">
+			<div className="border-10 bg-[var(--highlight)] border-[var(--highlight)] space-y-2">
 				{posts.map(({ metadata, slug }) => (
 					<BlogCard
 						key={slug}

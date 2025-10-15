@@ -1,3 +1,5 @@
+import { BlogHeader, BlogFooter } from "@/components/Blog"
+
 export const metadata = {
   title: "My Favorite Dessert",
   date: "2025-10-07",
@@ -5,7 +7,10 @@ export const metadata = {
   summary: "I talk about cheesecake and encourage you to make one."
 }
 
-## {metadata.title}
+<BlogHeader
+	title={metadata.title}
+	date={metadata.date}
+/>
 
 Is cheesecake your favorite dessert? Well, it’s mine but why?  
 Well, it just tastes good! If it doesn’t taste good to you, I probably won’t be able to change your mind.
@@ -25,3 +30,8 @@ Checkout the cheesecake I made a couple of weeks ago :)
 ![cheesecake](/food/cheesecake.webp)
 
 ![cheesecake slice](/food/cheesecake_slice.webp)
+
+<BlogFooter
+	summary={metadata.summary}
+	author={metadata.author}
+/>

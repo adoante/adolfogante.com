@@ -1,11 +1,16 @@
+import { BlogHeader, BlogFooter } from "@/components/Blog"
+
 export const metadata = {
   title: "Specialty Coffee",
   date: "2025-10-03",
   author: "Adolfo Gante",
-  summary: "I talk about coffee like I'm better than you for drinking with sugar and/or milk."
+  summary: "I talk about coffee like I'm better than you for drinking it with sugar and/or milk."
 }
 
-## {metadata.title}
+<BlogHeader
+	title={metadata.title}
+	date={metadata.date}
+/>
 
 Is coffee nothing by a bitter, medicine like, caffeine
 delivery system to you?
@@ -21,3 +26,8 @@ can be far more than just caffeine plus a sugar kick.
 I highly recommend watching James Hoffmann on 
 [**youtube**](https://www.youtube.com/@jameshoffmann)
 and visiting his site at [**jameshoffmann.co.uk**](https://www.jameshoffmann.co.uk/)!
+
+<BlogFooter
+	summary={metadata.summary}
+	author={metadata.author}
+/>
