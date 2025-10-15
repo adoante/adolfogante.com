@@ -40,7 +40,7 @@ export default async function Blog() {
 
 			<h2 className="text-3xl font-semibold">Recent Posts</h2>
 
-			<div className="border-10 bg-[var(--highlight)] border-[var(--highlight)] space-y-2">
+			<div className="border-10 bg-[var(--highlight)] border-[var(--highlight)] space-y-2 rounded-sm">
 				{posts.map(({ metadata, slug }) => (
 					<BlogCard
 						key={slug}

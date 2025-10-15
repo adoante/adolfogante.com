@@ -35,7 +35,7 @@ const Lightbox = ({ src, title, description, width, height, widthLg, heightLg }:
 					title={description}
 					width={width}
 					height={height}
-					className="shadow-md shadow-[color:var(--shadow)] bg-white p-2"
+					className="shadow-md shadow-[color:var(--shadow)] bg-white p-2 rounded-sm"
 				/>
 			</MotionButton>
 			<Dialog open={isOpen} onClose={() => setIsOpen(false)}>
@@ -64,7 +64,7 @@ const Lightbox = ({ src, title, description, width, height, widthLg, heightLg }:
 								title={description}
 								width={widthLg}
 								height={heightLg}
-								className="bg-white p-2"
+								className="bg-white p-2 rounded-sm"
 							/>
 
 							<Description className="my-2 dark:text-white">{description}</Description>

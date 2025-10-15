@@ -92,14 +92,14 @@ const Contact = () => {
 
 	return (
 		<form onSubmit={handleSubmit} noValidate={false} onInvalid={handleInvalid}>
-			<Fieldset className="bg-[var(--bg)] space-y-6 py-5 px-8 border-t-8 border-b-8 border-[var(--highlight)] shadow-md shadow-[color:var(--shadow)]">
+			<Fieldset className="bg-[var(--bg)] space-y-6 py-5 px-8 border-t-8 border-b-8 border-[var(--highlight)] shadow-md shadow-[color:var(--shadow)] rounded-sm">
 				<Legend className="text-2xl font-bold">Print a Ticket</Legend>
 
 				<Field>
 					<Label className="block">Name</Label>
 					<Input
 						className={clsx(
-							"block mt-1 text-[var(--text-muted)] border py-1 px-2 w-full",
+							"block mt-1 text-[var(--text-muted)] border py-1 px-2 w-full rounded-sm",
 							{
 								"bg-[var(--bg-dark)]": !isValidName,
 							}
@@ -116,7 +116,7 @@ const Contact = () => {
 					<Label className="block">Email</Label>
 					<Input
 						className={clsx(
-							"block mt-1 text-[var(--text-muted)] border py-1 px-2 w-full",
+							"block mt-1 text-[var(--text-muted)] border py-1 px-2 w-full rounded-sm",
 							{
 								"bg-[var(--bg-dark)]": !isValidEmail,
 							}
@@ -142,7 +142,7 @@ const Contact = () => {
 					</Label>
 					<Textarea
 						className={clsx(
-							"block mt-1 py-1 px-2 text-[var(--text-muted)] w-full border",
+							"block mt-1 py-1 px-2 text-[var(--text-muted)] w-full border rounded-sm",
 							{
 								"bg-[var(--bg-dark)]": !isValidMessage,
 							}
@@ -164,7 +164,7 @@ const Contact = () => {
 							transition: { duration: 0.1 }
 						}}
 						type="submit"
-						className="bg-[var(--bg-light)] px-4 py-1 cursor-pointer"
+						className="bg-[var(--bg-light)] px-4 py-1 cursor-pointer rounded-sm"
 					>
 						Print
 					</MotionButton>

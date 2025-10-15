@@ -3,8 +3,8 @@
 :root {
 	--bg-svg: url("/background.svg");
 	--bg-dark: hsl(0, 0%, 8%);
-	--bg: hsl(220, 20%, 15%);
-	--bg-light: hsl(220, 20%, 25%);
+	--bg: hsl(216, 20%, 10%);
+	--bg-light: hsl(220, 40%, 30%);
 	--text: hsl(0, 0%, 85%);
 	--text-muted: hsl(0, 0%, 75%);
 	--highlight: hsl(200, 100%, 40%);
@@ -14,8 +14,8 @@
 /* https://colorhunt.co/palette/f9f7f7dbe2ef3f72af112d4e */
 [data-theme="light"] {
 	--bg-svg: url("/background-light.svg");
-	--bg-dark: hsl(0, 14%, 97%);
-	--bg: hsl(219, 38.5%, 90%);
+	--bg-dark: hsl(0, 0%, 95%);
+	--bg: hsl(219, 40%, 97%);
 	--bg-light: hsl(219, 38.5%, 83%);
 	--text: hsl(212, 64%, 29%);
 	--text-muted: hsl(212, 64%, 19%);

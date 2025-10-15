@@ -26,7 +26,7 @@ const ProjectCard = ({ title, caption, image, link }: ProjectCardProps) => {
 			}}
 			href={link}
 			target="_blank"
-			className="flex flex-col bg-[var(--bg)] border-b-4 md:border-b-8 border-b-[var(--highlight)] hover:bg-[var(--bg-light)] cursor-pointer md:max-w-[250px] shadow-md shadow-[color:var(--shadow)]"
+			className="flex flex-col bg-[var(--bg)] border-b-4 md:border-b-8 border-b-[var(--highlight)] hover:bg-[var(--bg-light)] cursor-pointer md:max-w-[250px] shadow-md shadow-[color:var(--shadow)] rounded-sm"
 		>
 			{styledImage}
 			<div className="p-5 space-y-2">

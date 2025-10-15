@@ -30,7 +30,7 @@ const BlogCard = ({ slug, title, date, summary }: BlogCardProps) => {
 				backgroundColor: "var(--bg-light)"
 			}}
 			href={`/blog/${slug}`}
-			className="flex flex-col bg-[var(--bg)] hover:bg-[var(--bg-light)] cursor-pointer space-y-2 p-5 shadow-md shadow-[color:var(--shadow)]"
+			className="flex flex-col bg-[var(--bg)] hover:bg-[var(--bg-light)] cursor-pointer space-y-2 p-5 shadow-md shadow-[color:var(--shadow)] rounded-sm"
 		>
 			<span className="flex flex-row items-center space-x-2 justify-between">
 				<p className="font-bold">
@@ -51,13 +51,13 @@ const BlogCard = ({ slug, title, date, summary }: BlogCardProps) => {
 const BlogHeader = ({ title, date }: BlogHeaderProps) => {
 	return (
 		<header
-			className="bg-[var(--bg)] p-4 space-y-4 mb-10"
+			className="bg-[var(--bg-light)] p-4 space-y-4 mb-10 rounded-sm"
 		>
 			<span className="flex flex-row justify-between items-center space-x-2">
 				<h3 className="text-2xl font-bold">
 					{title}
 				</h3>
-				<p className="text-[var(--text-muted)] min-w-max">
+				<p className="min-w-max">
 					{date}
 				</p>
 			</span>
@@ -68,17 +68,17 @@ const BlogHeader = ({ title, date }: BlogHeaderProps) => {
 const BlogFooter = ({ summary, author }: BlogFooterProps) => {
 	return (
 		<header
-			className="bg-[var(--bg)] p-4 space-y-4 mt-10"
+			className="bg-[var(--bg-light)] p-4 space-y-4 mt-10 rounded-sm"
 		>
 			<span className="flex md:flex-row flex-col justify-between md:items-center md:space-x-8 space-y-2 md:space-y-0">
-				<p className="font-semibold">
+				<p className="font-bold">
 					TLDR:
 				</p>
 				<p className="text-[var(--text-muted)]">
 					{summary}
 				</p>
 				<p className="min-w-max">
-					{author}
+					- {author}
 				</p>
 			</span>
 		</header>
