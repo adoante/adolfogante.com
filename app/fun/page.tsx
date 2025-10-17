@@ -5,7 +5,10 @@ import { Lightbox } from "@/components/Lightbox";
 
 export const metadata: Metadata = {
 	title: "Fun",
-	description: "A bunch of unrelated stuff I want people to see and check out."
+	description: "A bunch of unrelated stuff I want people to see and check out.",
+	openGraph: {
+		description: "A bunch of unrelated stuff I want people to see and check out."
+	}
 }
 
 export function getCatFiles(): string[] {

@@ -19,7 +19,10 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
 
 	return {
 		title: metadata.title,
-		description: metadata.summary
+		description: metadata.summary,
+		openGraph: {
+			description: metadata.summary,
+		}
 	}
 }
 

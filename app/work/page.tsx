@@ -4,7 +4,10 @@ import Image from "next/image";
 
 export const metadata: Metadata = {
 	title: "Work",
-	description: "Work I've done including side and learning projects."
+	description: "Work I've done including side and learning projects.",
+	openGraph: {
+		description: "Work I've done including side and learning projects.",
+	}
 }
 
 export default function Work() {
