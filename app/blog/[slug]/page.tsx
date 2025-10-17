@@ -1,5 +1,5 @@
 import fs from "fs"
-import { Metadata } from "next"
+import { Metadata, ResolvingMetadata } from "next"
 import path from "path"
 
 interface BlogPostPageProps {
@@ -11,18 +11,23 @@ type BlogPostMetadata = {
 	date: string
 	author: string
 	summary: string
+	tags: string[]
 }
 
-export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: BlogPostPageProps, parent: ResolvingMetadata): Promise<Metadata> {
 	const { slug } = await params
 	const { metadata }: { metadata: BlogPostMetadata } = await import(`@/markdown/${slug}.mdx`)
+
+	const parentMetadata = await parent
+	const parentKeywords = (parentMetadata.keywords as string[]) ?? []
 
 	return {
 		title: metadata.title,
 		description: metadata.summary,
 		openGraph: {
 			description: metadata.summary,
-		}
+		},
+		keywords: [...parentKeywords, ...(metadata.tags ?? [])]
 	}
 }
 
