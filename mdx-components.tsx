@@ -59,8 +59,8 @@ const components = {
 		</a>
 	),
 	img: (props: ImageProps) => {
-		const { src, alt, width = 250, height = 250 } = props
-		return <Image src={src} title={alt} alt={alt} width={width} height={height} />
+		const { src, alt, width = 1000, height = 1000 } = props
+		return <Image src={src} title={alt} alt={alt} width={width} height={height} style={{ width: "auto", height: "auto" }} />
 	},
 	blockquote: ({ children }) => (
 		<blockquote
