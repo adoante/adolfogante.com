@@ -7,7 +7,7 @@ import { clsx } from "clsx"
 
 const MotionButton = motion.create(Button)
 
-const Contact = () => {
+const TicketContact = () => {
 	const [email, setEmail] = useState("")
 	const [submitted, setSubmitted] = useState(false)
 	const [message, setMessage] = useState("")
@@ -187,4 +187,4 @@ const Contact = () => {
 	)
 }
 
-export { Contact }
+export { TicketContact }

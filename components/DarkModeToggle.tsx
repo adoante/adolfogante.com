@@ -1,3 +1,5 @@
+"use client"
+
 import { MotionButton } from "@/lib/MotionElements"
 import { useState, useEffect } from "react"
 import { HeartStraightIcon } from "@phosphor-icons/react/dist/ssr"
