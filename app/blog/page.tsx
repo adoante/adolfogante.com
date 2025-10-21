@@ -7,9 +7,6 @@ import path from "path"
 export const metadata: Metadata = {
 	title: "Blog",
 	description: "Check out what could have just been a post on Twitter.",
-	openGraph: {
-		description: "Check out what could have just been a post on Twitter."
-	}
 }
 
 export default async function Blog() {

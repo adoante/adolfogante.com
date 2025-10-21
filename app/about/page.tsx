@@ -4,9 +4,6 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
 	title: "About",
 	description: "About page, everything I could possibly want you to know about me.",
-	openGraph: {
-		description: "About page, everything I could possibly want you to know about me.",
-	}
 }
 
 export default function About() {

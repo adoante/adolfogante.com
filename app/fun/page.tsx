@@ -8,9 +8,6 @@ import Link from 'next/link'
 export const metadata: Metadata = {
 	title: "Fun",
 	description: "A bunch of unrelated stuff I want people to see and check out.",
-	openGraph: {
-		description: "A bunch of unrelated stuff I want people to see and check out."
-	}
 }
 
 export default function Fun() {

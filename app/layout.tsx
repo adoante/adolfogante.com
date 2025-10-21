@@ -10,23 +10,14 @@ const fira = Fira_Code({
 })
 
 export const metadata: Metadata = {
-	metadataBase: new URL(`${process.env.NEXT_PUBLIC_BASE_URL}`),
 	keywords: ["Adolfo Gante", "Adolfo", "Gante", "Software Developer", "Software Engineer", "Personal Webiste", "Portfolio", "Blog"],
 	title: {
 		default: "Adolfo Gante",
 		template: "%s | Adolfo Gante"
 	},
 	description: "Adolfo Gante's personal website, blog, portfolio and web dev testing site.",
-	openGraph: {
-		description: "Adolfo Gante's personal website, blog, portfolio and web dev testing site.",
-		images: [`${process.env.NEXT_PUBLIC_BASE_URL}/opengraph-image.png`],
-		type: "website"
-	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Adolfo Gante",
-		description: "Adolfo Gante's personal website, blog, portfolio and web dev testing site.",
-		images: [`${process.env.NEXT_PUBLIC_BASE_URL}/opengraph-image.png`],
 	}
 }
 

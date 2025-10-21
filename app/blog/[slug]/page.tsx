@@ -24,10 +24,6 @@ export async function generateMetadata({ params }: BlogPostPageProps, parent: Re
 	return {
 		title: metadata.title,
 		description: metadata.summary,
-		openGraph: {
-			description: metadata.summary,
-			images: "https://www.adolfogante.com/opengraph-image.png"
-		},
 		keywords: [...parentKeywords, ...(metadata.tags ?? [])]
 	}
 }
