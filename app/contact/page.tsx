@@ -1,5 +1,14 @@
+import type { Metadata } from "next"
 import { TicketContact } from "@/components/Contact"
 import Link from "next/link"
+
+export const metadata: Metadata = {
+	title: "Contact",
+	description: "Contact me using email or send a ticket message.",
+	openGraph: {
+		description: "Contact me using email or send a ticket message.",
+	}
+}
 
 export default function Contact() {
 	return (
