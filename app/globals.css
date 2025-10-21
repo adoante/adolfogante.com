@@ -2,13 +2,13 @@
 
 :root {
 	--bg-svg: url("/background.svg");
-	--bg-dark: hsl(0, 0%, 8%);
+	--bg-dark: hsl(0, 0%, 3%);
 	--bg: hsl(216, 20%, 10%);
 	--bg-light: hsl(220, 40%, 30%);
 	--text: hsl(0, 0%, 85%);
 	--text-muted: hsl(0, 0%, 75%);
 	--highlight: hsl(200, 100%, 40%);
-	--shadow: hsla(220, 40%, 15%, 0.5);
+	--shadow: hsla(220, 40%, 15%, 0.3);
 }
 
 /* https://colorhunt.co/palette/f9f7f7dbe2ef3f72af112d4e */

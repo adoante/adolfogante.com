@@ -10,11 +10,11 @@ const NavBar = () => {
 	const linkStyle = "hover:underline hover:text-[var(--highlight)]"
 
 	const links = [
-		["about", "/about"],
-		["work", "/work"],
-		["blog", "/blog"],
-		["fun", "/fun"],
-		["contact", "/contact"]
+		["Contact", "/contact"],
+		["About", "/about"],
+		["Work", "/work"],
+		["Blog", "/blog"],
+		["Fun", "/fun"]
 	]
 
 	return (
