@@ -19,9 +19,14 @@ export const metadata: Metadata = {
 	description: "Adolfo Gante's personal website, blog, portfolio and web dev testing site.",
 	openGraph: {
 		description: "Adolfo Gante's personal website, blog, portfolio and web dev testing site.",
+		images: [`${process.env.NEXT_PUBLIC_BASE_URL}/opengraph-image.png`],
+		type: "website"
 	},
 	twitter: {
-		card: "summary_large_image"
+		card: "summary_large_image",
+		title: "Adolfo Gante",
+		description: "Adolfo Gante's personal website, blog, portfolio and web dev testing site.",
+		images: [`${process.env.NEXT_PUBLIC_BASE_URL}/opengraph-image.png`],
 	}
 }
 
