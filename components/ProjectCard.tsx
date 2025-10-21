@@ -1,8 +1,5 @@
-"use client"
-
-import { motion } from "motion/react"
 import { ImageProps } from "next/image"
-import Link from "next/link"
+import { MotionLink } from "@/lib/MotionElements"
 import { cloneElement } from "react"
 
 interface ProjectCardProps {
@@ -12,7 +9,6 @@ interface ProjectCardProps {
 	link: string
 }
 
-const MotionLink = motion(Link)
 
 const ProjectCard = ({ title, caption, image, link }: ProjectCardProps) => {
 	const styledImage = cloneElement(image, {

@@ -29,14 +29,38 @@ export default function RootLayout({
 	return (
 		<html lang="en" className={`${fira.className} no-scrollbar`}>
 			<body
-				className="flex flex-col min-h-screen overflow-y-scroll"
+				className="relative flex flex-col min-h-screen overflow-y-scroll"
+				style={{ backgroundColor: "var(--bg-dark)" }}
 			>
-				<NavBar />
-				<main className="flex-1 mx-auto max-w-4xl w-full px-5 text-left">
-					{children}
-					<Analytics />
-				</main>
-				<Footer />
+				{/*
+				Custom grid background overlay from https://bg.ibelick.com/
+				Asked Chatgippity to add it in
+				*/}
+				<div
+					className="pointer-events-none absolute inset-0 z-0"
+					style={{
+						backgroundImage: `
+              linear-gradient(to right, var(--bg-light)1px, transparent 1px),
+              linear-gradient(to bottom, var(--bg-light)1px, transparent 1px)
+            `,
+						backgroundSize: "14px 24px",
+						maskImage:
+							"radial-gradient(ellipse 60% 50% at 50% 0%, #000 70%, transparent 100%)",
+						WebkitMaskImage:
+							"radial-gradient(ellipse 60% 50% at 50% 0%, #000 70%, transparent 100%)",
+						opacity: 0.15, // make grid subtle
+					}}
+				/>
+
+				{/* Foreground content */}
+				<div className="relative z-10 flex flex-col min-h-screen text-[var(--text)]">
+					<NavBar />
+					<main className="flex-1 mx-auto max-w-4xl w-full px-5 text-left">
+						{children}
+						<Analytics />
+					</main>
+					<Footer />
+				</div>
 			</body>
 		</html>
 	)

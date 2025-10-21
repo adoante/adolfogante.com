@@ -2,7 +2,7 @@
 
 :root {
 	--bg-svg: url("/background.svg");
-	--bg-dark: hsl(0, 0%, 3%);
+	--bg-dark: hsl(0, 0%, 4%);
 	--bg: hsl(216, 20%, 10%);
 	--bg-light: hsl(220, 40%, 30%);
 	--text: hsl(0, 0%, 85%);
@@ -11,7 +11,6 @@
 	--shadow: hsla(220, 40%, 15%, 0.3);
 }
 
-/* https://colorhunt.co/palette/f9f7f7dbe2ef3f72af112d4e */
 [data-theme="light"] {
 	--bg-svg: url("/background-light.svg");
 	--bg-dark: hsl(0, 0%, 95%);
@@ -26,7 +25,6 @@
 body {
 	background: var(--bg-dark);
 	color: var(--text);
-	background-image: var(--bg-svg);
 	transition: background-color 0.5s, color 0.5s;
 }
 
