@@ -23,6 +23,12 @@ const Lightbox = ({ src, title, description, width, height, widthLg, heightLg }:
 	return (
 		<>
 			<MotionButton
+				initial={{ opacity: 0, scale: 0 }}
+				whileInView={{ opacity: 1, scale: 1 }}
+				viewport={{ once: true }}
+				transition={{
+					scale: { type: "spring", duration: 1.2 }
+				}}
 				whileHover={{
 					scale: 1.1,
 					transition: { duration: 0.1 }

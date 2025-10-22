@@ -16,6 +16,11 @@ const ProjectCard = ({ title, caption, image, link }: ProjectCardProps) => {
 	})
 	return (
 		<MotionLink
+			initial={{ opacity: 0, x: 100 }}
+			animate={{ opacity: 1, x: 0 }}
+			transition={{
+				x: { type: "spring", duration: 1.2 }
+			}}
 			whileHover={{
 				scale: 1.025,
 				transition: { duration: 0.1 }

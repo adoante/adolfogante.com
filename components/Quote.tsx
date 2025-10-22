@@ -1,3 +1,5 @@
+"use client"
+import { motion } from "motion/react"
 import { MotionLink } from "@/lib/MotionElements"
 
 interface QuoteProps {
@@ -11,6 +13,12 @@ const Quote = ({ quote, cite, src }: QuoteProps) => {
 	if (src) {
 		return (
 			<MotionLink
+				initial={{ opacity: 0, x: -100 }}
+				whileInView={{ opacity: 1, x: 0 }}
+				viewport={{ once: true }}
+				transition={{
+					x: { type: "spring", duration: 1.2 }
+				}}
 				whileHover={{
 					scale: 1.025,
 					transition: { duration: 0.2 },
@@ -37,12 +45,21 @@ const Quote = ({ quote, cite, src }: QuoteProps) => {
 	}
 
 	return (
-		<blockquote
-			className="md:p-8 p-4 md:border-l-10 border-l-5 border-l-[var(--highlight)] bg-[var(--bg)] shadow-md shadow-[color:var(--shadow)] rounded-sm space-y-4 flex flex-col"
+		<motion.div
+			initial={{ opacity: 0, x: -100 }}
+			whileInView={{ opacity: 1, x: 0 }}
+			viewport={{ once: true }}
+			transition={{
+				x: { type: "spring", duration: 1.2 }
+			}}
 		>
-			<p>{quote}</p>
-			<cite className="text-nowrap">- {cite}</cite>
-		</blockquote>
+			<blockquote
+				className="md:p-8 p-4 md:border-l-10 border-l-5 border-l-[var(--highlight)] bg-[var(--bg)] shadow-md shadow-[color:var(--shadow)] rounded-sm space-y-4 flex flex-col"
+			>
+				<p>{quote}</p>
+				<cite className="text-nowrap">- {cite}</cite>
+			</blockquote>
+		</motion.div>
 	)
 }
 

@@ -20,6 +20,11 @@ interface BlogCardProps {
 const BlogCard = ({ slug, title, date, summary }: BlogCardProps) => {
 	return (
 		<MotionLink
+			initial={{ opacity: 0, y: 100 }}
+			animate={{ opacity: 1, y: 0 }}
+			transition={{
+				y: { type: "spring", duration: 1.2 }
+			}}
 			whileHover={{
 				scale: 1.025,
 				transition: { duration: 0.2 },
