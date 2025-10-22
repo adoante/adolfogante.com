@@ -21,6 +21,7 @@ const Quote = ({ quote, cite, src }: QuoteProps) => {
 					backgroundColor: "var(--bg-light)"
 				}}
 				href={src}
+				target="_blank"
 				rel="noopener noreferrer"
 				className="flex flex-col md:p-8 p-4 md:border-l-10 border-l-5 border-l-[var(--highlight)] bg-[var(--bg)] shadow-md shadow-[color:var(--shadow)] rounded-sm hover:bg-[var(--bg-light)]"
 			>
