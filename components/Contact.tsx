@@ -91,99 +91,108 @@ const TicketContact = () => {
 	}
 
 	return (
-		<form onSubmit={handleSubmit} noValidate={false} onInvalid={handleInvalid}>
-			<Fieldset className="bg-[var(--bg)] space-y-6 py-5 px-8 border-t-8 border-b-8 border-[var(--highlight)] shadow-md shadow-[color:var(--shadow)] rounded-sm">
-				<Legend className="text-2xl font-bold">Print a Ticket</Legend>
+		<motion.div
+			initial={{ opacity: 0, y: 20 }}
+			animate={{ opacity: 1, y: 0 }}
+			transition={{
+				duration: 0.8,
+				ease: "easeOut"
+			}}
+		>
+			<form onSubmit={handleSubmit} noValidate={false} onInvalid={handleInvalid}>
+				<Fieldset className="bg-[var(--bg)] space-y-6 py-5 px-8 border-t-8 border-b-8 border-[var(--highlight)] shadow-md shadow-[color:var(--shadow)] rounded-sm">
+					<Legend className="text-2xl font-bold">Print a Ticket</Legend>
 
-				<Field>
-					<Label className="block">Name</Label>
-					<Input
-						className={clsx(
-							"block mt-1 text-[var(--text-muted)] border py-1 px-2 w-full rounded-sm",
-							{
-								"bg-[var(--bg-dark)]": !isValidName,
-							}
-						)}
-						name="name"
-						required
-						placeholder="name or something silly"
-						onInput={handleInput}
-					>
-					</Input>
-				</Field>
-
-				<Field>
-					<Label className="block">Email</Label>
-					<Input
-						className={clsx(
-							"block mt-1 text-[var(--text-muted)] border py-1 px-2 w-full rounded-sm",
-							{
-								"bg-[var(--bg-dark)]": !isValidEmail,
-							}
-						)}
-						name="email"
-						type="email"
-						value={email}
-						onChange={(e) => setEmail(e.target.value)}
-						required
-						placeholder="mr.cool126@yahoo.com"
-						onInput={handleInput}
-					>
-					</Input>
-				</Field>
-
-				<Field>
-					<Label className="flex flex-row justify-between">Message
-						<Description
-							className={clsx("text-[var(--text-muted)]", { "text-red-400": (message.length >= 280) })}
+					<Field>
+						<Label className="block">Name</Label>
+						<Input
+							className={clsx(
+								"block mt-1 text-[var(--text-muted)] border py-1 px-2 w-full rounded-sm",
+								{
+									"bg-[var(--bg-dark)]": !isValidName,
+								}
+							)}
+							name="name"
+							required
+							placeholder="name or something silly"
+							onInput={handleInput}
 						>
-							{message.length}/280
-						</Description>
-					</Label>
-					<Textarea
-						className={clsx(
-							"block mt-1 py-1 px-2 text-[var(--text-muted)] w-full border rounded-sm",
-							{
-								"bg-[var(--bg-dark)]": !isValidMessage,
-							}
+						</Input>
+					</Field>
+
+					<Field>
+						<Label className="block">Email</Label>
+						<Input
+							className={clsx(
+								"block mt-1 text-[var(--text-muted)] border py-1 px-2 w-full rounded-sm",
+								{
+									"bg-[var(--bg-dark)]": !isValidEmail,
+								}
+							)}
+							name="email"
+							type="email"
+							value={email}
+							onChange={(e) => setEmail(e.target.value)}
+							required
+							placeholder="mr.cool126@yahoo.com"
+							onInput={handleInput}
+						>
+						</Input>
+					</Field>
+
+					<Field>
+						<Label className="flex flex-row justify-between">Message
+							<Description
+								className={clsx("text-[var(--text-muted)]", { "text-red-400": (message.length >= 280) })}
+							>
+								{message.length}/280
+							</Description>
+						</Label>
+						<Textarea
+							className={clsx(
+								"block mt-1 py-1 px-2 text-[var(--text-muted)] w-full border rounded-sm",
+								{
+									"bg-[var(--bg-dark)]": !isValidMessage,
+								}
+							)}
+							name="message"
+							value={message}
+							onChange={(e) => setMessage(e.target.value)}
+							required
+							placeholder="Yes, there is a limit."
+							onInput={handleInput}
+						>
+						</Textarea>
+					</Field>
+
+					<span className="flex flex-row justify-between">
+						<MotionButton
+							whileHover={{
+								scale: 1.1,
+								transition: { duration: 0.1 }
+							}}
+							type="submit"
+							className="bg-[var(--bg-light)] px-4 py-1 cursor-pointer rounded-sm"
+						>
+							Print
+						</MotionButton>
+
+						{submitted && (
+							<p className="text-green-400">Message sent!</p>
 						)}
-						name="message"
-						value={message}
-						onChange={(e) => setMessage(e.target.value)}
-						required
-						placeholder="Yes, there is a limit."
-						onInput={handleInput}
-					>
-					</Textarea>
-				</Field>
 
-				<span className="flex flex-row justify-between">
-					<MotionButton
-						whileHover={{
-							scale: 1.1,
-							transition: { duration: 0.1 }
-						}}
-						type="submit"
-						className="bg-[var(--bg-light)] px-4 py-1 cursor-pointer rounded-sm"
-					>
-						Print
-					</MotionButton>
+						{failed && (
+							<p className="text-red-400">Not sent!</p>
+						)}
+					</span>
 
-					{submitted && (
-						<p className="text-green-400">Message sent!</p>
+					{(!isValidName || !isValidEmail || !isValidMessage) && (
+						<p className="text-red-400">{validationError}</p>
 					)}
 
-					{failed && (
-						<p className="text-red-400">Not sent!</p>
-					)}
-				</span>
-
-				{(!isValidName || !isValidEmail || !isValidMessage) && (
-					<p className="text-red-400">{validationError}</p>
-				)}
-
-			</Fieldset>
-		</form>
+				</Fieldset>
+			</form>
+		</motion.div>
 	)
 }
 

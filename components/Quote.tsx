@@ -13,7 +13,7 @@ const Quote = ({ quote, cite, src }: QuoteProps) => {
 	if (src) {
 		return (
 			<MotionLink
-				initial={{ opacity: 0, x: -100 }}
+				initial={{ opacity: 0, x: -20 }}
 				whileInView={{ opacity: 1, x: 0 }}
 				viewport={{ once: true }}
 				transition={{
@@ -46,7 +46,7 @@ const Quote = ({ quote, cite, src }: QuoteProps) => {
 
 	return (
 		<motion.div
-			initial={{ opacity: 0, x: -100 }}
+			initial={{ opacity: 0, x: -20 }}
 			whileInView={{ opacity: 1, x: 0 }}
 			viewport={{ once: true }}
 			transition={{

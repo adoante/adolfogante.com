@@ -23,11 +23,12 @@ const Lightbox = ({ src, title, description, width, height, widthLg, heightLg }:
 	return (
 		<>
 			<MotionButton
-				initial={{ opacity: 0, scale: 0 }}
+				initial={{ opacity: 0, scale: 0.9 }}
 				whileInView={{ opacity: 1, scale: 1 }}
 				viewport={{ once: true }}
 				transition={{
-					scale: { type: "spring", duration: 1.2 }
+					scale: { type: "spring", duration: 1.2 },
+					ease: "easeIn"
 				}}
 				whileHover={{
 					scale: 1.1,
@@ -48,7 +49,7 @@ const Lightbox = ({ src, title, description, width, height, widthLg, heightLg }:
 				<motion.div
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
-					transition={{ duration: 0.3, ease: "easeInOut" }}
+					transition={{ duration: 0.3, ease: "easeIn" }}
 				>
 					<DialogBackdrop className="fixed inset-0 bg-black/90" />
 					<div className="fixed inset-0 flex w-screen items-center justify-center">
