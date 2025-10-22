@@ -34,8 +34,9 @@ export default async function Blog() {
 				Check out what could have just been a post on a Twitter.
 			</p>
 			<Quote
-				quote="It's called 'X the everything app'."
-				cite="Ludwig Ahgren"
+				quote="X the everything app...its the everything app bro..."
+				cite="The Yard"
+				src="https://youtu.be/jcKiINW2Q9s?si=f292ddy-oDr3nEJY&t=134"
 			/>
 
 			<h2 className="text-3xl font-semibold">Recent Posts</h2>

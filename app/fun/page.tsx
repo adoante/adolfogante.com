@@ -2,8 +2,9 @@ import type { Metadata } from 'next'
 import { Lightbox } from "@/components/Lightbox"
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
 import { MotionButton } from '@/lib/MotionElements'
-import { getCatFiles, getWebsites } from '@/utils'
+import { getCatFiles, getQuotes, getWebsites } from '@/utils'
 import Link from 'next/link'
+import { Quote } from '@/components/Quote'
 
 export const metadata: Metadata = {
 	title: "Fun",
@@ -15,6 +16,7 @@ export default function Fun() {
 	const personal = getWebsites("public/websites/personal.txt")
 	const dev = getWebsites("public/websites/dev.txt")
 	const productivity = getWebsites("public/websites/productivity.txt")
+	const quotes = getQuotes()
 
 	return (
 		<main className="space-y-10">
@@ -41,6 +43,14 @@ export default function Fun() {
 						className="text-center cursor-pointer bg-[var(--bg)] shadow-[var(--highlight)] w-min px-2 py-1 rounded-sm data-selected:bg-[var(--bg-light)] focus:not-data-focus:outline-none"
 					>
 						Websites
+					</Tab>
+					<Tab
+						as={MotionButton}
+						whileHover={{ scale: 1.1 }}
+						whileTap={{ scale: 0.95 }}
+						className="text-center cursor-pointer bg-[var(--bg)] shadow-[var(--highlight)] w-min px-2 py-1 rounded-sm data-selected:bg-[var(--bg-light)] focus:not-data-focus:outline-none"
+					>
+						Quotes
 					</Tab>
 				</TabList>
 				<TabPanels>
@@ -141,6 +151,20 @@ export default function Fun() {
 											{site.split("https://")}
 										</Link>
 									</p>
+								))}
+							</div>
+						</section>
+					</TabPanel>
+					<TabPanel>
+						<section className="flex flex-col space-y-10">
+							<h2 className="text-3xl font-semibold">Quotes</h2>
+							<p>
+								A bunch of quotes I liked so I wrote them down.
+							</p>
+
+							<div className="space-y-5">
+								{quotes.map((quote, index) => (
+									<Quote key={index} {...quote} />
 								))}
 							</div>
 						</section>
