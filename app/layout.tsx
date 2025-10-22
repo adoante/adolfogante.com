@@ -37,7 +37,7 @@ export default function RootLayout({
 				Asked Chatgippity to add it in
 				*/}
 				<div
-					className="pointer-events-none absolute inset-0 z-0"
+					className="pointer-events-none absolute inset-0"
 					style={{
 						backgroundImage: `
               linear-gradient(to right, var(--bg-light)1px, transparent 1px),
@@ -53,7 +53,7 @@ export default function RootLayout({
 				/>
 
 				{/* Foreground content */}
-				<div className="relative z-10 flex flex-col min-h-screen text-[var(--text)]">
+				<div className="relative flex flex-col min-h-screen text-[var(--text)]">
 					<NavBar />
 					<main className="flex-1 mx-auto max-w-4xl w-full px-5 text-left">
 						{children}
