@@ -22,6 +22,10 @@
 	--shadow: hsla(220, 30%, 50%, 0.25);
 }
 
+#animated-grid rect {
+	transition: stroke-width 2s ease, stroke 2s ease;
+}
+
 body {
 	background: var(--bg-dark);
 	color: var(--text);

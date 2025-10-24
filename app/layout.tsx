@@ -4,7 +4,7 @@ import { Fira_Code } from "next/font/google"
 import "./globals.css"
 import { NavBar } from "@/components/NarBar"
 import { Footer } from "@/components/Footer"
-
+import AnimatedGridBackground from "@/components/Background"
 const fira = Fira_Code({
 
 })
@@ -33,27 +33,11 @@ export default function RootLayout({
 				className="relative flex flex-col min-h-screen overflow-y-scroll"
 				style={{ backgroundColor: "var(--bg-dark)" }}
 			>
-				{/*
-				Custom grid background overlay from https://bg.ibelick.com/
-				Asked Chatgippity to add it in
-				*/}
-				<div
-					className="pointer-events-none absolute inset-0"
-					style={{
-						backgroundImage: `
-              linear-gradient(to right, var(--bg-light)1px, transparent 1px),
-              linear-gradient(to bottom, var(--bg-light)1px, transparent 1px)
-            `,
-						backgroundSize: "14px 24px",
-						maskImage:
-							"radial-gradient(ellipse 60% 50% at 50% 0%, #000 70%, transparent 100%)",
-						WebkitMaskImage:
-							"radial-gradient(ellipse 60% 50% at 50% 0%, #000 70%, transparent 100%)",
-						opacity: 0.15, // make grid subtle
-					}}
-				/>
 
-				{/* Foreground content */}
+				{/* 🔹 Animated SVG background */}
+				<AnimatedGridBackground />
+
+				{/* 🔹 Foreground content */}
 				<div className="relative flex flex-col min-h-screen text-[var(--text)]">
 					<NavBar />
 					<main className="flex-1 mx-auto max-w-4xl w-full px-5 text-left">
@@ -64,5 +48,5 @@ export default function RootLayout({
 				</div>
 			</body>
 		</html>
-	)
+	);
 }
