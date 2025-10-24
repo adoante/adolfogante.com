@@ -9,7 +9,7 @@ export default function AnimatedBackground() {
 
 		function highlightRandom(index: number) {
 			rects.forEach((r) => {
-				r.setAttribute("stroke-width", "0.5")
+				r.setAttribute("stroke-width", "0.25")
 				r.setAttribute("stroke", "var(--bg-light)")
 			})
 			const rect = rects[index % rects.length]
@@ -48,44 +48,44 @@ export default function AnimatedBackground() {
 							y="20"
 							width="40"
 							height="40"
-							rx="6"
-							ry="6"
+							rx="0"
+							ry="0"
 							fill="none"
 							stroke="var(--bg-light)"
-							strokeWidth="0.5"
+							strokeWidth="0.25"
 						/>
 						<rect
 							x="-20"
 							y="-20"
 							width="40"
 							height="40"
-							rx="6"
-							ry="6"
+							rx="0"
+							ry="0"
 							fill="none"
 							stroke="var(--bg-light)"
-							strokeWidth="0.5"
+							strokeWidth="0.25"
 						/>
 						<rect
 							x="-20"
 							y="20"
 							width="40"
 							height="40"
-							rx="6"
-							ry="6"
+							rx="0"
+							ry="0"
 							fill="none"
 							stroke="var(--bg-light)"
-							strokeWidth="0.5"
+							strokeWidth="0.25"
 						/>
 						<rect
 							x="20"
 							y="-20"
 							width="40"
 							height="40"
-							rx="6"
-							ry="6"
+							rx="0"
+							ry="0"
 							fill="none"
 							stroke="var(--bg-light)"
-							strokeWidth="0.5"
+							strokeWidth="0.25"
 						/>
 					</pattern>
 				</defs>
