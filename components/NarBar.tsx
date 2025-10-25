@@ -118,14 +118,14 @@ const NavBar = () => {
 						)}
 					</MenuButton>
 				</span>
-				<MenuItems anchor="bottom" className="min-w-1/2 pl-1 overflow-x-scroll no-scrollbar">
+				<MenuItems anchor="bottom" className="min-w-1/2 overflow-x-scroll no-scrollbar py-1 pl-1 rounded-sm">
 					<motion.div
 						initial={{ opacity: 0, x: 50 }}
 						animate={{ opacity: 1, x: 0 }}
 						transition={{
 							x: { type: "spring", duration: 0.6 },
 						}}
-						className="flex flex-col justify-between border-b-2 border-t-2 border-l-2 rounded-tl-sm rounded-bl-sm border-[var(--highlight)] space-y-4 py-4 text-center bg-[var(--bg)] items-center"
+						className="flex flex-col justify-between border-b-2 border-t-2 border-l-2 rounded-tl-sm rounded-bl-sm border-[var(--highlight)] space-y-4 py-4 text-center bg-[var(--bg)] items-center shadow-md shadow-[color:var(--shadow)]"
 					>
 						{links.map(([title, url]) => {
 							const active = pathname == url
