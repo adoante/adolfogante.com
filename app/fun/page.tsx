@@ -100,7 +100,7 @@ export default function Fun() {
 											href={site}
 											target="_blank"
 											rel="noopener noreferrer"
-											className="md:text-xl underline text-[var(--highlight)] hover:text-[var(--text)]"
+											className="md:text-xl underline text-[var(--link)] hover:text-[var(--text)]"
 										>
 											{site.split("https://")}
 										</Link>
@@ -123,7 +123,7 @@ export default function Fun() {
 											href={site}
 											target="_blank"
 											rel="noopener noreferrer"
-											className="md:text-xl underline text-[var(--highlight)] hover:text-[var(--text)]"
+											className="md:text-xl underline text-[var(--link)] hover:text-[var(--text)]"
 										>
 											{site.split("https://")}
 										</Link>
@@ -146,7 +146,7 @@ export default function Fun() {
 											href={site}
 											target="_blank"
 											rel="noopener noreferrer"
-											className="md:text-xl underline text-[var(--highlight)] hover:text-[var(--text)]"
+											className="md:text-xl underline text-[var(--link)] hover:text-[var(--text)]"
 										>
 											{site.split("https://")}
 										</Link>

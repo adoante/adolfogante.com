@@ -14,7 +14,7 @@ const NavBar = () => {
 
 	const pathname = usePathname()
 
-	const linkStyle = "hover:underline hover:text-[var(--highlight)]"
+	const linkStyle = "hover:underline hover:text-[var(--link)]"
 
 	const links = [
 		["Contact", "/contact"],
@@ -39,7 +39,7 @@ const NavBar = () => {
 					scale: 1.1,
 					transition: { type: "spring", duration: 0.4 }
 				}}
-				className={`text-2xl font-bold md:w-max w-min hover:text-[var(--highlight)] ${pathname == "/" ? "text-[var(--link)]" : ""
+				className={`text-2xl font-bold md:w-max w-min hover:text-[var(--link)] ${pathname == "/" ? "text-[var(--link)]" : ""
 					}`}
 				href="/"
 			>
@@ -75,7 +75,7 @@ const NavBar = () => {
 							scale: 1.1,
 							transition: { duration: 0.1 }
 						}}
-						className={`text-2xl mx-5 max-w-max font-bold hover:text-[var(--highlight)] ${pathname == "/" ? "text-[var(--highlight)]" : ""
+						className={`text-2xl mx-5 max-w-max font-bold hover:text-[var(--link)] ${pathname == "/" ? "text-[var(--link)]" : ""
 							}`}
 						href="/"
 					>
@@ -134,7 +134,7 @@ const NavBar = () => {
 									key={title}
 								>
 									<Link
-										className={`${linkStyle} ${active ? "text-[var(--highlight)] font-bold" : ""}`}
+										className={`${linkStyle} ${active ? "text-[var(--link)] font-bold" : ""}`}
 										href={url}
 									>
 										{title}
