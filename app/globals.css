@@ -4,22 +4,24 @@
 	--bg-svg: url("/background.svg");
 	--bg-dark: hsl(0, 0%, 4%);
 	--bg: hsl(216, 20%, 10%);
-	--bg-light: hsl(220, 40%, 30%);
+	--bg-light: hsl(216, 80%, 15%);
 	--text: hsl(0, 0%, 85%);
 	--text-muted: hsl(0, 0%, 75%);
-	--highlight: hsl(200, 100%, 40%);
-	--shadow: hsla(220, 40%, 15%, 0.3);
+	--highlight: hsl(216, 40%, 95%);
+	--shadow: hsla(0, 100%, 0%, 1);
+	--link: hsl(220, 100%, 55%);
 }
 
 [data-theme="light"] {
 	--bg-svg: url("/background-light.svg");
 	--bg-dark: hsl(0, 0%, 95%);
 	--bg: hsl(219, 40%, 97%);
-	--bg-light: hsl(219, 38.5%, 83%);
+	--bg-light: hsl(219, 100%, 90%);
 	--text: hsl(212, 64%, 29%);
 	--text-muted: hsl(212, 64%, 19%);
-	--highlight: hsl(212, 90%, 70%);
+	--highlight: hsl(212, 90%, 20%);
 	--shadow: hsla(220, 30%, 50%, 0.25);
+	--link: hsl(220, 100%, 60%);
 }
 
 #animated-grid rect {

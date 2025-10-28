@@ -54,7 +54,7 @@ const components = {
 		<a
 			href={href}
 			target="_norefer"
-			className="cursor-pointer text-[var(--highlight)] hover:text-[var(--text)]">
+			className="cursor-pointer text-[var(--link)] hover:text-[var(--text)] hover:underline">
 			{children}
 		</a>
 	),

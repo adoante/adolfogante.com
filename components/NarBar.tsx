@@ -6,7 +6,7 @@ import Link from "next/link"
 import { Socials } from "./Socials"
 import { useState, useEffect } from "react"
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react"
-import { TextOutdentIcon, TextIndentIcon } from "@phosphor-icons/react/"
+import { EqualsIcon, NotEqualsIcon } from "@phosphor-icons/react/"
 import { MotionLink } from "@/lib/MotionElements"
 
 const NavBar = () => {
@@ -39,7 +39,7 @@ const NavBar = () => {
 					scale: 1.1,
 					transition: { type: "spring", duration: 0.4 }
 				}}
-				className={`text-2xl font-bold md:w-max w-min hover:text-[var(--highlight)] ${pathname == "/" ? "text-[var(--highlight)]" : ""
+				className={`text-2xl font-bold md:w-max w-min hover:text-[var(--highlight)] ${pathname == "/" ? "text-[var(--link)]" : ""
 					}`}
 				href="/"
 			>
@@ -51,7 +51,7 @@ const NavBar = () => {
 					const active = pathname == url
 					return (
 						<Link
-							className={`${linkStyle} ${active ? "text-[var(--highlight)] font-bold" : ""}`}
+							className={`${linkStyle} ${active ? "text-[var(--link)] font-bold" : ""}`}
 							key={title}
 							href={url}
 						>
@@ -85,14 +85,14 @@ const NavBar = () => {
 						{({ open }) => (open ?
 							<motion.div
 								key="open"
-								initial={{ opacity: 0, scale: 0 }}
-								animate={{ opacity: 1, scale: 1, rotate: 360 }}
+								initial={{ opacity: 0, scale: 0.8 }}
+								animate={{ opacity: 1, scale: 1 }}
 								transition={{
-									rotate: { type: "spring", duration: 0.8 },
+									duration: 0.4
 								}}
 								className="justify-self-end"
 							>
-								<TextOutdentIcon
+								<NotEqualsIcon
 									width={35}
 									height={35}
 									className="mx-5"
@@ -101,14 +101,14 @@ const NavBar = () => {
 							:
 							<motion.div
 								key="closed"
-								initial={{ opacity: 0, scale: 0 }}
-								animate={{ opacity: 1, scale: 1, rotate: 360 }}
+								initial={{ opacity: 0, scale: 0.8 }}
+								animate={{ opacity: 1, scale: 1 }}
 								transition={{
-									rotate: { type: "spring", duration: 0.8 },
+									duration: 0.4
 								}}
 								className="justify-self-end"
 							>
-								<TextIndentIcon
+								<EqualsIcon
 									width={35}
 									height={35}
 									className="mx-5"

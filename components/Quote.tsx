@@ -37,7 +37,7 @@ const Quote = ({ quote, cite, src }: QuoteProps) => {
 					<p>{quote}</p>
 					<span className="flex flex-row space-x-2">
 						<p>-</p>
-						<cite className="text-[var(--highlight)] w-max">{cite}</cite>
+						<cite className="text-[var(--link)] w-max">{cite}</cite>
 					</span>
 				</blockquote>
 			</MotionLink>

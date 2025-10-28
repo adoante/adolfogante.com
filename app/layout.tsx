@@ -1,13 +1,12 @@
 import { Analytics } from "@vercel/analytics/next"
 import type { Metadata } from "next"
-import { Fira_Code } from "next/font/google"
+import { Aleo, IBM_Plex_Sans } from "next/font/google"
 import "./globals.css"
 import { NavBar } from "@/components/NarBar"
 import { Footer } from "@/components/Footer"
 import AnimatedGridBackground from "@/components/Background"
-const fira = Fira_Code({
 
-})
+const aleo = IBM_Plex_Sans({})
 
 export const metadata: Metadata = {
 	metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL!),
@@ -28,7 +27,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en" className={`${fira.className} no-scrollbar`}>
+		<html lang="en" className={`${aleo.className} no-scrollbar`}>
 			<body
 				className="relative flex flex-col min-h-screen overflow-y-scroll"
 				style={{ backgroundColor: "var(--bg-dark)" }}
