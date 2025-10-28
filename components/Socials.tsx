@@ -10,7 +10,7 @@ const Socials = () => {
 				["https://www.linkedin.com/in/adolfogante/", <LinkedinLogoIcon className="w-7 h-7" key="linkedin" />],
 			].map(([url, icon]) => (
 
-				<Link className="hover:text-[var(--highlight)]" key={url as string} href={url as string} target="_blank">
+				<Link className="hover:text-[var(--link)]" key={url as string} href={url as string} target="_blank" rel="noopener noreferrer">
 					{icon}
 				</Link>
 			))}

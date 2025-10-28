@@ -6,15 +6,18 @@ import Link from "next/link"
 import { Socials } from "./Socials"
 import { useState, useEffect } from "react"
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react"
-import { EqualsIcon, NotEqualsIcon } from "@phosphor-icons/react/"
+import { EqualsIcon, ListIcon, NotEqualsIcon, SquareIcon } from "@phosphor-icons/react/"
 import { MotionLink } from "@/lib/MotionElements"
+import { CubeIcon, CubeTransparentIcon } from "@phosphor-icons/react"
+import { CubeFocusIcon } from "@phosphor-icons/react"
+import { HashIcon, HashStraightIcon, SquaresFourIcon, XSquareIcon } from "@phosphor-icons/react/dist/ssr"
 
 const NavBar = () => {
 	const [isMobile, setIsMobile] = useState<boolean>(false)
 
 	const pathname = usePathname()
 
-	const linkStyle = "hover:underline hover:text-[var(--link)]"
+	const linkStyle = "hover:underline underline-offset-4 hover:text-[var(--link)]"
 
 	const links = [
 		["Contact", "/contact"],
@@ -92,7 +95,7 @@ const NavBar = () => {
 								}}
 								className="justify-self-end"
 							>
-								<NotEqualsIcon
+								<XSquareIcon
 									width={35}
 									height={35}
 									className="mx-5"
@@ -108,7 +111,7 @@ const NavBar = () => {
 								}}
 								className="justify-self-end"
 							>
-								<EqualsIcon
+								<SquaresFourIcon
 									width={35}
 									height={35}
 									className="mx-5"

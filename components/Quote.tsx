@@ -31,7 +31,7 @@ const Quote = ({ quote, cite, src }: QuoteProps) => {
 				href={src}
 				target="_blank"
 				rel="noopener noreferrer"
-				className="flex flex-col md:p-8 p-4 md:border-l-10 border-l-5 border-l-[var(--highlight)] bg-[var(--bg)] shadow-md shadow-[color:var(--shadow)] rounded-sm hover:bg-[var(--bg-light)]"
+				className="flex flex-col md:p-8 p-4 md:border-l-10 border-l-5 border-l-[var(--highlight)] bg-[var(--bg)] shadow-md shadow-[color:var(--shadow)] rounded-l-sm hover:bg-[var(--bg-light)]"
 			>
 				<blockquote className="space-y-4">
 					<p>{quote}</p>
@@ -54,7 +54,7 @@ const Quote = ({ quote, cite, src }: QuoteProps) => {
 			}}
 		>
 			<blockquote
-				className="md:p-8 p-4 md:border-l-10 border-l-5 border-l-[var(--highlight)] bg-[var(--bg)] shadow-md shadow-[color:var(--shadow)] rounded-sm space-y-4 flex flex-col"
+				className="md:p-8 p-4 md:border-l-10 border-l-5 border-l-[var(--highlight)] bg-[var(--bg)] shadow-md shadow-[color:var(--shadow)] rounded-l-sm space-y-4 flex flex-col"
 			>
 				<p>{quote}</p>
 				<cite className="text-nowrap">- {cite}</cite>

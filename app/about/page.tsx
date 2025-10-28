@@ -1,4 +1,5 @@
 import { Certificate } from "@/components/Certificate";
+import { MinusIcon } from "@phosphor-icons/react/dist/ssr";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -11,18 +12,27 @@ export default function About() {
 		<main className="space-y-10">
 			<h1 className="text-4xl font-bold">About</h1>
 
-			<section className="flex flex-col space-y-10">
-				<h2 className="text-3xl font-semibold">Hey, I{`'`}m Adolfo.</h2>
-				<div className="flex flex-col space-y-2">
-					<p>Things I spend my time on:</p>
+			<h4 className="text-xl my-2 font-semibold">Things I spend my time on:</h4>
+			<ul className="space-y-1 [&>li]:flex [&>li]:flex-row [&>li]:items-center [&>li]:gap-1">
+				<li>
+					<MinusIcon />
+					programming
+				</li>
+				<li>
+					<MinusIcon />
+					specialty coffee
+				</li>
+				<li>
+					<MinusIcon />
+					cooking
+				</li>
+				<li>
+					<MinusIcon />
+					youtube
+				</li>
+			</ul>
 
-					<ul className="list-none">
-						<li>- programming</li>
-						<li>- specialty coffee</li>
-						<li>- cooking</li>
-						<li>- youtube</li>
-					</ul>
-				</div>
+			<section className="flex flex-col space-y-10">
 				<h2 className="text-3xl font-semibold">Education</h2>
 
 				<div className="grid md:grid-cols-2 gap-4">

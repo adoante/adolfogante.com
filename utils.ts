@@ -37,6 +37,10 @@ interface QuoteProps {
 const getQuotes = (): QuoteProps[] => {
 	const quotes: QuoteProps[] = [
 		{
+			quote: "It can always get worse.",
+			cite: "Somebody"
+		},
+		{
 			quote: "You don't need to have verbosity for the distillation of pure thought.",
 			cite: "Cary Jardin"
 		},

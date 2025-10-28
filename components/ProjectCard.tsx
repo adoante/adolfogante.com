@@ -12,7 +12,7 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ title, caption, image, link }: ProjectCardProps) => {
 	const styledImage = cloneElement(image, {
-		className: `${image.props.className ?? ""}  aspect-square object-cover`
+		className: `${image.props.className ?? ""}  aspect-square object-cover rounded-t-sm`
 	})
 	return (
 		<MotionLink
@@ -28,7 +28,7 @@ const ProjectCard = ({ title, caption, image, link }: ProjectCardProps) => {
 			}}
 			href={link}
 			target="_blank"
-			className="flex flex-col bg-[var(--bg)] border-b-4 md:border-b-8 border-b-[var(--highlight)] hover:bg-[var(--bg-light)] cursor-pointer md:max-w-[250px] shadow-md shadow-[color:var(--shadow)] rounded-sm"
+			className="flex flex-col bg-[var(--bg)] border-b-4 md:border-b-8 border-b-[var(--highlight)] hover:bg-[var(--bg-light)] cursor-pointer md:max-w-[250px] shadow-md shadow-[color:var(--shadow)] rounded-t-sm"
 		>
 			{styledImage}
 			<div className="p-5 space-y-2">

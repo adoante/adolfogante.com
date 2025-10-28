@@ -26,13 +26,13 @@ export default function Work() {
 
 				<div className="grid sm:grid-cols-2 md:grid-cols-3 gap-y-6">
 					<ProjectCard
-						title="catpictures.xyz"
-						caption="Look at some cat pictures and occasionally gifs."
-						link="https://catpictures.xyz/"
+						title="URL Shortener"
+						caption="Get your own adoante.com short link."
+						link="https://adoante.com/"
 						image={
 							<Image
-								src="/cat/MTcwMzEyMg.gif"
-								alt="cat gif"
+								src="/projects/url-shortener.webp"
+								alt="URL Shortener website homepage"
 								width={500}
 								height={500}
 							/>
@@ -45,6 +45,19 @@ export default function Work() {
 						image={
 							<Image
 								src="/projects/appraise.png"
+								alt="Appraise website home page"
+								width={500}
+								height={500}
+							/>
+						}
+					/>
+					<ProjectCard
+						title="catpictures.xyz"
+						caption="Look at some cat pictures and occasionally gifs."
+						link="https://catpictures.xyz/"
+						image={
+							<Image
+								src="/cat/MTcwMzEyMg.gif"
 								alt="cat gif"
 								width={500}
 								height={500}
