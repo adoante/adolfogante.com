@@ -63,7 +63,7 @@ export default function Home() {
 					<ArrowUpRightIcon size={18} />
 					<Link
 						className="cursor-pointer text-[var(--link)] hover:text-[var(--text)]"
-						href="https://drive.google.com/file/d/1IJtaDaHiNDXSQ-6YRPWkqblL5wZrMc_Q/view?usp=drive_link"
+						href="https://drive.google.com/file/d/13vb_0Ss9Eu07SB9syB-SG_HpE0nRQd4B/view?usp=sharing"
 						target="_blank"
 						rel="noopener noreferrer"
 					>

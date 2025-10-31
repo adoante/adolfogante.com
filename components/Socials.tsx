@@ -5,7 +5,7 @@ const Socials = () => {
 	return (
 		<div className="flex space-x-4">
 			{[
-				["https://drive.google.com/file/d/1IJtaDaHiNDXSQ-6YRPWkqblL5wZrMc_Q/view?usp=drive_link", <ReadCvLogoIcon className="w-7 h-7" key="resume" />],
+				["https://drive.google.com/file/d/13vb_0Ss9Eu07SB9syB-SG_HpE0nRQd4B/view?usp=sharing", <ReadCvLogoIcon className="w-7 h-7" key="resume" />],
 				["https://github.com/adoante/", <GithubLogoIcon className="w-7 h-7" key="github" />],
 				["https://www.linkedin.com/in/adolfogante/", <LinkedinLogoIcon className="w-7 h-7" key="linkedin" />],
 			].map(([url, icon]) => (
