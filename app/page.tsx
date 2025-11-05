@@ -39,47 +39,47 @@ export default function Home() {
 			<ul className="space-y-1 [&>li]:flex [&>li]:flex-row [&>li]:items-center [&>li]:gap-1 [&>li>a]:underline-offset-4 [&>li>a:hover]:underline">
 				<li>
 					<ArrowUpRightIcon size={18} />
-					<Link
+					<a
 						className="hover:text-[var(--text)] text-[var(--link)]"
 						href="mailto:adolfogante@gmail.com"
 						target="_blank"
 						rel="noopener noreferrer"
 					>
 						adolfogante@gmail.com
-					</Link>
+					</a>
 				</li>
 				<li>
 					<ArrowUpRightIcon size={18} />
-					<Link
+					<a
 						className="cursor-pointer text-[var(--link)] hover:text-[var(--text)]"
 						href="https://linkedin.com/in/adolfogante"
 						target="_blank"
 						rel="noopener noreferrer"
 					>
 						LinkedIn
-					</Link>
+					</a>
 				</li>
 				<li>
 					<ArrowUpRightIcon size={18} />
-					<Link
+					<a
 						className="cursor-pointer text-[var(--link)] hover:text-[var(--text)]"
-						href={process.env.RESUME_LINK!}
+						href={process.env.NEXT_PUBLIC_RESUME_LINK!}
 						target="_blank"
 						rel="noopener noreferrer"
 					>
 						Resume
-					</Link>
+					</a>
 				</li>
 				<li>
 					<ArrowUpRightIcon size={18} />
-					<Link
+					<a
 						className="cursor-pointer text-[var(--link)] hover:text-[var(--text)]"
 						href="https://github.com/adoante"
 						target="_blank"
 						rel="noopener noreferrer"
 					>
 						GitHub
-					</Link>
+					</a>
 				</li>
 				<li>
 					<ArrowRightIcon size={18} />
