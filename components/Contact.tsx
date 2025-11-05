@@ -8,83 +8,72 @@ import { clsx } from "clsx"
 const MotionButton = motion.create(Button)
 
 const TicketContact = () => {
-	const [email, setEmail] = useState("")
+	const [formData, setFormData] = useState({
+		name: "",
+		email: "",
+		message: "",
+	})
+
+	const [errors, setErrors] = useState({
+		name: "",
+		email: "",
+		message: "",
+	})
+
 	const [submitted, setSubmitted] = useState(false)
-	const [message, setMessage] = useState("")
-	const [validationError, setValidationError] = useState("")
-	const [isValidName, setIsValidName] = useState(true)
-	const [isValidEmail, setIsValidEmail] = useState(true)
-	const [isValidMessage, setIsValidMessage] = useState(true)
 	const [failed, setFailed] = useState(false)
 
-	const handleInvalid = (e: React.FormEvent<HTMLFormElement>) => {
-		e.preventDefault()
+	const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+		const { name, value } = e.target
 
-		const form = e.currentTarget
+		// Enforce 280-char limit for message
+		const newValue = name === "message" ? value.slice(0, 280) : value
 
-		const invalidFields = Array.from(form.elements).filter(
-			(el): el is HTMLInputElement | HTMLTextAreaElement =>
-				(el instanceof HTMLInputElement || el instanceof HTMLTextAreaElement) &&
-				!el.validity.valid
-		)
-
-		setIsValidName(true)
-		setIsValidEmail(true)
-		setIsValidMessage(true)
-		setValidationError("")
+		setFormData(prev => ({ ...prev, [name]: newValue }))
+		setErrors(prev => ({ ...prev, [name]: "" }))
 		setSubmitted(false)
-
-		invalidFields.forEach((field) => {
-			setValidationError((prev) => prev + field.validationMessage + " ")
-			switch (field.name) {
-				case "name":
-					setIsValidName(false)
-					break
-				case "email":
-					setIsValidEmail(false)
-					break
-				case "message":
-					setIsValidMessage(false)
-					break
-			}
-		})
+		setFailed(false)
 	}
 
-	const handleInput = (e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-		e.preventDefault()
+	const validate = () => {
+		const newErrors = { name: "", email: "", message: "" }
 
-		setIsValidName(true)
-		setIsValidEmail(true)
-		setIsValidMessage(true)
-		setSubmitted(false)
-		setValidationError("")
+		if (!formData.name.trim()) newErrors.name = "Your name please."
+		if (!formData.email.trim()) newErrors.email = "I need your email so I can respond!"
+		else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = "Email is invalid."
+		if (!formData.message.trim()) newErrors.message = "Message is required."
+		else if (formData.message.length >= 280) newErrors.message = "Yeah, so you can't go over 280 characters."
+
+		return newErrors
 	}
 
 	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault()
 
-		const form = e.currentTarget
+		const validationErrors = validate()
+		if (Object.values(validationErrors).some(Boolean)) {
+			setErrors(validationErrors)
+			setSubmitted(false)
+			setFailed(true)
+			return
+		}
 
-		const name = (form.elements.namedItem("name") as HTMLInputElement).value
-		const email = (form.elements.namedItem("email") as HTMLInputElement).value
-		const message = (form.elements.namedItem("message") as HTMLTextAreaElement).value
+		try {
+			const res = await fetch("/api/tickets", {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify(formData),
+			})
 
-		const ticket = { name, email, message }
-
-		const res = await fetch("/api/tickets", {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify(ticket),
-		})
-
-		if (res.ok) {
-			setSubmitted(true)
-			form.reset()
-			setEmail("")
-			setMessage("")
-		} else {
+			if (res.ok) {
+				setSubmitted(true)
+				setFailed(false)
+				setFormData({ name: "", email: "", message: "" })
+			} else {
+				setSubmitted(false)
+				setFailed(true)
+			}
+		} catch {
 			setSubmitted(false)
 			setFailed(true)
 		}
@@ -94,102 +83,78 @@ const TicketContact = () => {
 		<motion.div
 			initial={{ opacity: 0, y: 20 }}
 			animate={{ opacity: 1, y: 0 }}
-			transition={{
-				duration: 0.8,
-				ease: "easeOut"
-			}}
+			transition={{ duration: 0.8, ease: "easeOut" }}
 		>
-			<form onSubmit={handleSubmit} noValidate={false} onInvalid={handleInvalid}>
+			<form onSubmit={handleSubmit} noValidate>
 				<Fieldset className="bg-[var(--bg)] space-y-6 py-5 px-8 shadow-md shadow-[color:var(--shadow)] rounded-sm">
 					<Legend className="text-2xl font-bold">Print a Ticket</Legend>
 
 					<Field>
 						<Label className="block">Name</Label>
 						<Input
+							name="name"
+							placeholder="name or something silly"
+							value={formData.name}
+							onChange={handleChange}
+							required
 							className={clsx(
 								"block mt-1 text-[var(--text-muted)] border py-1 px-2 w-full rounded-sm",
-								{
-									"bg-[var(--bg-dark)]": !isValidName,
-								}
+								{ "bg-[var(--bg-dark)]": errors.name }
 							)}
-							name="name"
-							required
-							placeholder="name or something silly"
-							onInput={handleInput}
-						>
-						</Input>
+						/>
+						{errors.name && <p className="text-red-400 mt-1">{errors.name}</p>}
 					</Field>
 
 					<Field>
 						<Label className="block">Email</Label>
 						<Input
-							className={clsx(
-								"block mt-1 text-[var(--text-muted)] border py-1 px-2 w-full rounded-sm",
-								{
-									"bg-[var(--bg-dark)]": !isValidEmail,
-								}
-							)}
 							name="email"
 							type="email"
-							value={email}
-							onChange={(e) => setEmail(e.target.value)}
-							required
 							placeholder="mr.cool126@yahoo.com"
-							onInput={handleInput}
-						>
-						</Input>
+							value={formData.email}
+							onChange={handleChange}
+							required
+							className={clsx(
+								"block mt-1 text-[var(--text-muted)] border py-1 px-2 w-full rounded-sm",
+								{ "bg-[var(--bg-dark)]": errors.email }
+							)}
+						/>
+						{errors.email && <p className="text-red-400 mt-1">{errors.email}</p>}
 					</Field>
 
 					<Field>
-						<Label className="flex flex-row justify-between">Message
-							<Description
-								className={clsx("text-[var(--text-muted)]", { "text-red-400": (message.length >= 280) })}
-							>
-								{message.length}/280
+						<Label className="flex flex-row justify-between">
+							Message
+							<Description className={clsx("text-[var(--text-muted)]", { "text-red-400": formData.message.length >= 280 })}>
+								{formData.message.length}/280
 							</Description>
 						</Label>
 						<Textarea
+							name="message"
+							placeholder="Yes, there is a limit."
+							value={formData.message}
+							onChange={handleChange}
+							required
 							className={clsx(
 								"block mt-1 py-1 px-2 text-[var(--text-muted)] w-full border rounded-sm",
-								{
-									"bg-[var(--bg-dark)]": !isValidMessage,
-								}
+								{ "bg-[var(--bg-dark)]": errors.message }
 							)}
-							name="message"
-							value={message}
-							onChange={(e) => setMessage(e.target.value)}
-							required
-							placeholder="Yes, there is a limit."
-							onInput={handleInput}
-						>
-						</Textarea>
+						/>
+						{errors.message && <p className="text-red-400 mt-1">{errors.message}</p>}
 					</Field>
 
-					<span className="flex flex-row justify-between">
+					<div className="flex flex-row justify-between items-center">
 						<MotionButton
-							whileHover={{
-								scale: 1.1,
-								transition: { duration: 0.1 }
-							}}
+							whileHover={{ scale: 1.1, transition: { duration: 0.1 } }}
 							type="submit"
 							className="bg-[var(--bg-light)] px-4 py-1 cursor-pointer rounded-sm"
 						>
 							Print
 						</MotionButton>
 
-						{submitted && (
-							<p className="text-green-400">Message sent!</p>
-						)}
-
-						{failed && (
-							<p className="text-red-400">Not sent!</p>
-						)}
-					</span>
-
-					{(!isValidName || !isValidEmail || !isValidMessage) && (
-						<p className="text-red-400">{validationError}</p>
-					)}
-
+						{submitted && <p className="text-green-400">Message sent!</p>}
+						{failed && <p className="text-red-400">Not sent!</p>}
+					</div>
 				</Fieldset>
 			</form>
 		</motion.div>
@@ -197,3 +162,4 @@ const TicketContact = () => {
 }
 
 export { TicketContact }
+

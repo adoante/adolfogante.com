@@ -29,6 +29,10 @@ export default function Home() {
 				for collaboration, mentorship, and growth in software development.
 			</p>
 
+			<p className="text-[var(--text-muted)]">
+				Check out the rest of my website learn more!
+			</p>
+
 			<h4 className="underline underline-offset-4 my-2">
 				Currently building
 			</h4>
