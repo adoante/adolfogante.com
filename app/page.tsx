@@ -30,11 +30,11 @@ export default function Home() {
 			</p>
 
 			<p className="text-[var(--text-muted)]">
-				Check out the rest of my website learn more!
+				Check out the rest of my website!
 			</p>
 
 			<h4 className="underline underline-offset-4 my-2">
-				Currently building
+				Currently building:
 			</h4>
 			<span className="flex flex-row items-center gap-1 hover:underline underline-offset-4">
 				<ArrowUpRightIcon size={18} />
