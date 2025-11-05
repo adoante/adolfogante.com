@@ -24,14 +24,25 @@ export default function Home() {
 			</header>
 
 			<p className="text-[var(--text-muted)]">
-				A software dev who enjoys building useful solutions to problems that pop up in everyones life.
+				I’m a software developer who values collaboration, clarity, and turning ideas into
+				practical solutions. Always learning and exploring new tools, I welcome opportunities
+				for collaboration, mentorship, and growth in software development.
 			</p>
 
-			<p className="text-[var(--text-muted)]">
-				I value collaboration, clarity, and the process of refining ideas into practical solutions.
-				Always learning and exploring new tools, I’m open to collaborations, mentorship, and
-				opportunities to grow in software development.
-			</p>
+			<h4 className="underline underline-offset-4 my-2">
+				Currently building
+			</h4>
+			<span className="flex flex-row items-center gap-1 hover:underline underline-offset-4">
+				<ArrowUpRightIcon size={18} />
+				<a
+					className="hover:text-[var(--text)] text-[var(--link)]"
+					href="https://picka.spot"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					Pick a Spot
+				</a>
+			</span>
 
 			<h4 className="underline underline-offset-4 my-2">
 				Connect with me:
