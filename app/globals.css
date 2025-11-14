@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+:root {
+	--bg-svg: url("/background.svg");
+	--bg-dark: hsl(0, 0%, 4%);
+	--bg: hsl(216, 20%, 10%);
+	--bg-light: hsl(216, 80%, 15%);
+	--text: hsl(0, 0%, 85%);
+	--text-muted: hsl(0, 0%, 75%);
+	--highlight: hsl(216, 40%, 95%);
+	--shadow: hsla(0, 100%, 0%, 1);
+	--link: hsl(220, 100%, 55%);
+}
+
+[data-theme="light"] {
+	--bg-svg: url("/background-light.svg");
+	--bg-dark: hsl(0, 0%, 95%);
+	--bg: hsl(219, 40%, 97%);
+	--bg-light: hsl(219, 100%, 90%);
+	--text: hsl(212, 64%, 29%);
+	--text-muted: hsl(212, 64%, 19%);
+	--highlight: hsl(212, 90%, 20%);
+	--shadow: hsla(220, 30%, 50%, 0.25);
+	--link: hsl(220, 100%, 60%);
+}
+
+#animated-grid rect {
+	transition: stroke-width 2s ease, stroke 2s ease;
+}
+
+body {
+	background: var(--bg-dark);
+	color: var(--text);
+	transition: background-color 0.5s, color 0.5s;
+}
+
+/* 
+* yeah used ai for this scroll bar stuff
+* only used in app/layout.tsx
+*/
+@layer utilities {
+
+	/* hide webkit scrollbars */
+	.no-scrollbar::-webkit-scrollbar {
+		width: 0;
+		height: 0;
+		display: none;
+	}
+
+	/* firefox / IE */
+	.no-scrollbar {
+		-ms-overflow-style: none;
+		/* IE and Edge */
+		scrollbar-width: none;
+		/* Firefox */
+	}
+
+	/* also cover html/body if the browser makes them the scrolling element */
+	html.no-scrollbar,
+	body.no-scrollbar {
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+	}
+
+	html.no-scrollbar::-webkit-scrollbar,
+	body.no-scrollbar::-webkit-scrollbar {
+		width: 0;
+		height: 0;
+		display: none;
+	}
+}
