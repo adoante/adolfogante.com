@@ -6,13 +6,19 @@ import Link from "next/link"
 import { Socials } from "./Socials"
 import { useState, useEffect } from "react"
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react"
-import { EqualsIcon, ListIcon, NotEqualsIcon, SquareIcon } from "@phosphor-icons/react/"
 import { MotionLink } from "@/lib/MotionElements"
-import { CubeIcon, CubeTransparentIcon } from "@phosphor-icons/react"
-import { CubeFocusIcon } from "@phosphor-icons/react"
-import { HashIcon, HashStraightIcon, SquaresFourIcon, XSquareIcon } from "@phosphor-icons/react/dist/ssr"
+import { SquaresFourIcon, XSquareIcon } from "@phosphor-icons/react/dist/ssr"
+import clsx from "clsx"
 
 const NavBar = () => {
+    const [scrolled, setScrolled] = useState(false)
+
+    useEffect(() => {
+        const handleScroll = () => setScrolled(window.scrollY > 0)
+        window.addEventListener("scroll", handleScroll)
+        return () => window.removeEventListener("scroll", handleScroll)
+    }, [])
+
 	const [isMobile, setIsMobile] = useState<boolean>(false)
 
 	const pathname = usePathname()
@@ -35,7 +41,7 @@ const NavBar = () => {
 	}, [])
 
 	const desktop = (
-		<nav className="grid grid-cols-3 justify-between place-items-center md:p-15 py-5">
+		<nav className="grid grid-cols-3 justify-between place-items-center p-8">
 
 			<MotionLink
 				whileHover={{
@@ -72,7 +78,7 @@ const NavBar = () => {
 	const mobile = (
 		<nav>
 			<Menu>
-				<span className="flex flex-row justify-between items-center py-5">
+				<span className="flex flex-row justify-between items-center">
 					<MotionLink
 						whileHover={{
 							scale: 1.1,
@@ -156,6 +162,14 @@ const NavBar = () => {
 	)
 
 	return (
+        <div
+            className={clsx(
+                "fixed top-0 w-full z-10 transition-all duration-300",
+                scrolled
+                    ? "bg-[var(--bg)] rounded-b-xl"
+                    : "bg-transparent"
+            )}
+        >
 		<motion.div
 			initial={{ opacity: 0, y: -10 }}
 			animate={{ opacity: 1, y: 0 }}
@@ -166,6 +180,7 @@ const NavBar = () => {
 		>
 			{isMobile ? mobile : desktop}
 		</motion.div>
+        </div>
 	)
 
 }

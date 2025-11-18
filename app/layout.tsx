@@ -38,8 +38,9 @@ export default function RootLayout({
 
 				{/* 🔹 Foreground content */}
 				<div className="relative flex flex-col min-h-screen text-[var(--text)]">
-					<NavBar />
-					<main className="flex-1 mx-auto max-w-4xl w-full px-5 text-left">
+                    <NavBar />
+
+					<main className="flex-1 mx-auto max-w-4xl w-full px-5 text-left md:my-30 my-25">
 						{children}
 						<Analytics />
 					</main>
