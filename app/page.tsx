@@ -24,13 +24,9 @@ export default function Home() {
 			</header>
 
 			<p className="text-[var(--text-muted)]">
-				I’m a software developer who values collaboration, clarity, and turning ideas into
-				practical solutions. Always learning and exploring new tools, I welcome opportunities
-				for collaboration, mentorship, and growth in software development.
-			</p>
-
-			<p className="text-[var(--text-muted)]">
-				Check out the rest of my website!
+                This is my personal website and somewhat of a developer portfolio.
+                The following are quick links to what I{`'`}m currently doing and contact methods.
+				Check out the rest of my website to learn more about me and about my interests.
 			</p>
 
 			<h4 className="underline underline-offset-4 my-2">
