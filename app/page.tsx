@@ -25,24 +25,9 @@ export default function Home() {
 
 			<p className="text-[var(--text-muted)]">
                 This is my personal website and somewhat of a developer portfolio.
-                The following are quick links to what I{`'`}m currently doing and contact methods.
+                The following are quick links to contact methods and what I{`'`}m currently doing.
 				Check out the rest of my website to learn more about me and about my interests.
 			</p>
-
-			<h4 className="underline underline-offset-4 my-2">
-				Currently building:
-			</h4>
-			<span className="flex flex-row items-center gap-1 hover:underline underline-offset-4">
-				<ArrowUpRightIcon size={18} />
-				<a
-					className="hover:text-[var(--text)] text-[var(--link)]"
-					href="https://picka.spot"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					Pick a Spot
-				</a>
-			</span>
 
 			<h4 className="underline underline-offset-4 my-2">
 				Connect with me:
@@ -102,6 +87,36 @@ export default function Home() {
 					</Link>
 				</li>
 			</ul>
+
+			<h4 className="underline underline-offset-4 my-2">
+				Currently building:
+			</h4>
+			<span className="flex flex-row items-center gap-1 hover:underline underline-offset-4">
+				<ArrowUpRightIcon size={18} />
+				<a
+					className="hover:text-[var(--text)] text-[var(--link)]"
+					href="https://picka.spot"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					Pick a Spot
+				</a>
+			</span>
+
+			<h4 className="underline underline-offset-4 my-2">
+				Currently studying:
+			</h4>
+			<span className="flex flex-row items-center gap-1 hover:underline underline-offset-4">
+				<ArrowUpRightIcon size={18} />
+				<a
+					className="hover:text-[var(--text)] text-[var(--link)]"
+					href="https://craftinginterpreters.com/"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					Crafting Interpreters by Robert Nystrom
+				</a>
+			</span>
 
 		</motion.main>
 	)
