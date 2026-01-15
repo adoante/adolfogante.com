@@ -37,7 +37,7 @@ const Quote = ({ quote, cite, src }: QuoteProps) => {
 					<p>{quote}</p>
 					<span className="flex flex-row space-x-2">
 						<p>-</p>
-						<cite className="text-[var(--link)] w-max">{cite}</cite>
+						<cite className="text-[var(--link)]">{cite}</cite>
 					</span>
 				</blockquote>
 			</MotionLink>
@@ -57,7 +57,7 @@ const Quote = ({ quote, cite, src }: QuoteProps) => {
 				className="md:p-8 p-4 md:border-l-10 border-l-5 border-l-[var(--highlight)] bg-[var(--bg)] shadow-md shadow-[color:var(--shadow)] rounded-l-sm space-y-4 flex flex-col"
 			>
 				<p>{quote}</p>
-				<cite className="text-nowrap">- {cite}</cite>
+				<cite className="">- {cite}</cite>
 			</blockquote>
 		</motion.div>
 	)
