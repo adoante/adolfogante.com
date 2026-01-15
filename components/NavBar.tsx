@@ -48,24 +48,28 @@ const NavBar = () => {
 					scale: 1.1,
 					transition: { type: "spring", duration: 0.4 }
 				}}
-				className={`text-2xl font-bold md:w-max w-min hover:text-[var(--link)] ${pathname == "/" ? "text-[var(--link)]" : ""
+				className={`${linkStyle} text-2xl font-bold md:w-max w-min hover:text-[var(--link)] ${pathname == "/" ? "text-[var(--link)]" : ""
 					}`}
 				href="/"
 			>
-				Adolfo Gante
+                Home
 			</MotionLink>
 			{/* Pages */}
 			<div className="flex md:flex-row flex-col md:space-x-4 text-lg w-min">
 				{links.map(([title, url]) => {
 					const active = pathname == url
 					return (
-						<Link
+						<MotionLink
+				            whileHover={{
+					            scale: 1.1,
+					            transition: { type: "spring", duration: 0.4 }
+				            }}
 							className={`${linkStyle} ${active ? "text-[var(--link)] font-bold" : ""}`}
 							key={title}
 							href={url}
 						>
 							{title}
-						</Link>
+						</MotionLink>
 					)
 				}
 				)}
@@ -88,7 +92,7 @@ const NavBar = () => {
 							}`}
 						href="/"
 					>
-						Adolfo Gante
+					    Home
 					</MotionLink>
 					<MenuButton className="items-center py-4 w-min">
 						{({ open }) => (open ?
