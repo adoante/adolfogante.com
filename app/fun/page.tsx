@@ -75,6 +75,22 @@ export default function Fun() {
 									/>
 								))}
 							</div>
+
+							<h2 className="text-3xl font-semibold">Friends, Family and I</h2>
+							<p>
+								Pictures of myself, my family and friends.
+							</p>
+
+							<Lightbox
+								src="/me/me-and-me.png"
+								description={"This is actually just a stiched image of me sitting on both sides of the couch."}
+								title="Me and my twin chilling after dinner"
+								width={250}
+								height={250}
+								widthLg={500}
+								heightLg={500}
+							/>
+
 						</section>
 					</TabPanel>
 					<TabPanel>
