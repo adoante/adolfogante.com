@@ -1,6 +1,6 @@
 import { Certificate } from "@/components/Certificate";
-import { MinusIcon } from "@phosphor-icons/react/dist/ssr";
 import { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
 	title: "About",
@@ -12,25 +12,14 @@ export default function About() {
 		<main className="space-y-10">
 			<h1 className="text-4xl font-bold">About</h1>
 
-			<h4 className="text-xl my-2 font-semibold">Things I spend my time on:</h4>
-			<ul className="space-y-1 [&>li]:flex [&>li]:flex-row [&>li]:items-center [&>li]:gap-1">
-				<li>
-					<MinusIcon />
-					programming
-				</li>
-				<li>
-					<MinusIcon />
-					specialty coffee
-				</li>
-				<li>
-					<MinusIcon />
-					cooking
-				</li>
-				<li>
-					<MinusIcon />
-					youtube
-				</li>
-			</ul>
+            <p>
+                I’m a software developer, based in <b>San Diego</b>, exploring modern web technologies and frameworks such as{" "}
+                <b>React, Express.js, Next.js, Svelte, Tailwind CSS, and FastAPI</b>. I’m very
+                comfortable with common programming languages like{" "}
+                <b>Python, JavaScript, TypeScript, C++, and C</b>, and I’m currently learning
+                interesting languages such as <b>Rust and Go</b>. I also work regularly with tools and platforms including{" "}
+                <b>Git, GitHub, Figma, AWS, Docker, Vercel, Hostinger</b> and using <b>Linux (Ubuntu/Arch)</b> daily.
+            </p>
 
 			<section className="flex flex-col space-y-10">
 				<h2 className="text-3xl font-semibold">Education</h2>
@@ -51,6 +40,14 @@ export default function About() {
 					/>
 				</div>
 			</section>
+
+            <p>Just me and my twin chilling after dinner.</p>
+            <Image
+                src="/me/me-and-me.png"
+                alt="picture of me and me"
+                width={500}
+                height={500}
+            />
 		</main >
 	)
 }
