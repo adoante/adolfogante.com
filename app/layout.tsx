@@ -1,6 +1,6 @@
 import { Analytics } from "@vercel/analytics/next"
 import type { Metadata } from "next"
-import { Aleo, IBM_Plex_Sans } from "next/font/google"
+import { IBM_Plex_Sans } from "next/font/google"
 import "./globals.css"
 import { NavBar } from "@/components/NavBar"
 import { Footer } from "@/components/Footer"
