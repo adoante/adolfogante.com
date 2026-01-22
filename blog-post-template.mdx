@@ -1,0 +1,22 @@
+import { BlogHeader, BlogFooter } from "@/components/Blog"
+import { Quote } from "@/components/Quote"
+
+export const metadata = {
+  title: "",
+  date: "YYYY-MM-DD",
+  author: "Adolfo Gante",
+  summary: " ",
+  tags: ["", ""]
+}
+
+<BlogHeader
+	title={metadata.title}
+	date={metadata.date}
+/>
+
+
+
+<BlogFooter
+	summary={metadata.summary}
+	author={metadata.author}
+/>
